@@ -15,6 +15,7 @@
 		E2224302275520AA00EF74FF /* AsyncComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2224301275520AA00EF74FF /* AsyncComponent.swift */; };
 		E2224304275520F400EF74FF /* AsyncViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2224303275520F400EF74FF /* AsyncViewModel.swift */; };
 		E22243062755214200EF74FF /* AsyncViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22243052755214200EF74FF /* AsyncViewController.swift */; };
+		E22243082755274200EF74FF /* ZoomableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22243072755274200EF74FF /* ZoomableImageView.swift */; };
 		E25A1E2F2732896D008B6001 /* NavigationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25A1E2E2732896D008B6001 /* NavigationCell.swift */; };
 		E25BE3DC272DB898007EA317 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25BE3DB272DB898007EA317 /* AppDelegate.swift */; };
 		E25BE3DE272DB898007EA317 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25BE3DD272DB898007EA317 /* SceneDelegate.swift */; };
@@ -61,6 +62,7 @@
 		E2224301275520AA00EF74FF /* AsyncComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncComponent.swift; sourceTree = "<group>"; };
 		E2224303275520F400EF74FF /* AsyncViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncViewModel.swift; sourceTree = "<group>"; };
 		E22243052755214200EF74FF /* AsyncViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncViewController.swift; sourceTree = "<group>"; };
+		E22243072755274200EF74FF /* ZoomableImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomableImageView.swift; sourceTree = "<group>"; };
 		E25A1E2E2732896D008B6001 /* NavigationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationCell.swift; sourceTree = "<group>"; };
 		E25BE3D8272DB898007EA317 /* Faces.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Faces.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E25BE3DB272DB898007EA317 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 		E25A1E2C2732894F008B6001 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E22243072755274200EF74FF /* ZoomableImageView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -165,7 +168,6 @@
 				E281DC16272EAC6B00A02890 /* Utilities */,
 				E25BE40C272DB8BA007EA317 /* App */,
 				E25BE40B272DB8B3007EA317 /* Modules */,
-				E22243002755209B00EF74FF /* Async */,
 				E25BE3E4272DB899007EA317 /* Assets.xcassets */,
 				E25BE3E6272DB899007EA317 /* LaunchScreen.storyboard */,
 				E25BE3E9272DB899007EA317 /* Info.plist */,
@@ -196,6 +198,7 @@
 				E25BE40D272DDAB5007EA317 /* Root */,
 				E281DC13272EABDE00A02890 /* Home */,
 				E22242F92755169400EF74FF /* Zoom */,
+				E22243002755209B00EF74FF /* Async */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -425,6 +428,7 @@
 				E22242FB275516B000EF74FF /* ZoomComponent.swift in Sources */,
 				E281DC1A272EB87800A02890 /* HomeViewModel.swift in Sources */,
 				E281DC1C272EB93C00A02890 /* NotImplemented.swift in Sources */,
+				E22243082755274200EF74FF /* ZoomableImageView.swift in Sources */,
 				E281DC21272ED9C100A02890 /* HomeComponent.swift in Sources */,
 				E281DC12272EAA3800A02890 /* RootComponent.swift in Sources */,
 				E25BE3DE272DB898007EA317 /* SceneDelegate.swift in Sources */,

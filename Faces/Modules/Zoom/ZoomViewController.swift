@@ -13,9 +13,15 @@ final class ZoomViewController: UIViewController, ConnectedViewController {
     let viewModel: ZoomViewModel
     var bag = Set<AnyCancellable>()
 
+    // MARK: - UI
+    private lazy var zoomableImageView: ZoomableImageView = {
+        let image = UIImage(named: "test")!
+        let imageView = ZoomableImageView(image: image)
+        return imageView
+    }()
+
     // MARK: - Lifecycle
     init(viewModel: ZoomViewModel) {
-        print("zoom!")
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -28,6 +34,14 @@ final class ZoomViewController: UIViewController, ConnectedViewController {
         super.viewDidLoad()
 
         view.backgroundColor = .white
+
+        view.addSubview(zoomableImageView)
+        zoomableImageView.snp.makeConstraints { make in
+            make.leading.trailing.equalToSuperview()
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
+        }
+
         bindViewModel()
     }
 
