@@ -35,14 +35,22 @@ final class ZoomViewController: UIViewController, ConnectedViewController {
 
         view.backgroundColor = .white
 
-        view.addSubview(zoomableImageView)
-        zoomableImageView.snp.makeConstraints { make in
-            make.leading.trailing.equalToSuperview()
-            make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
-            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
+//        view.addSubview(zoomableImageView)
+//        zoomableImageView.snp.makeConstraints { make in
+//            make.edges.equalToSuperview()
+//        }
+
+//        bindViewModel()
+
+        guard let window = UIApplication.appWindow else {
+            assertionFailure("Could not get app window")
+            return
         }
 
-        bindViewModel()
+        window.addSubview(zoomableImageView)
+        zoomableImageView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
     }
 
     func bindViewModel() {

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9277315C2756398D0060793A /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9277315B2756398D0060793A /* UIApplication+Extension.swift */; };
 		E22242F627550CC400EF74FF /* ConnectedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22242F527550CC400EF74FF /* ConnectedViewController.swift */; };
 		E22242F827550CE400EF74FF /* ConnectedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22242F727550CE400EF74FF /* ConnectedViewModel.swift */; };
 		E22242FB275516B000EF74FF /* ZoomComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22242FA275516B000EF74FF /* ZoomComponent.swift */; };
@@ -54,6 +55,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9277315B2756398D0060793A /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
 		E22242F527550CC400EF74FF /* ConnectedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectedViewController.swift; sourceTree = "<group>"; };
 		E22242F727550CE400EF74FF /* ConnectedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectedViewModel.swift; sourceTree = "<group>"; };
 		E22242FA275516B000EF74FF /* ZoomComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomComponent.swift; sourceTree = "<group>"; };
@@ -237,6 +239,7 @@
 			children = (
 				E281DC1D272ED8CC00A02890 /* MVVM */,
 				E281DC1B272EB93C00A02890 /* NotImplemented.swift */,
+				9277315B2756398D0060793A /* UIApplication+Extension.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -432,6 +435,7 @@
 				E281DC21272ED9C100A02890 /* HomeComponent.swift in Sources */,
 				E281DC12272EAA3800A02890 /* RootComponent.swift in Sources */,
 				E25BE3DE272DB898007EA317 /* SceneDelegate.swift in Sources */,
+				9277315C2756398D0060793A /* UIApplication+Extension.swift in Sources */,
 				E22242F827550CE400EF74FF /* ConnectedViewModel.swift in Sources */,
 				E25BE40F272DDACD007EA317 /* RootViewController.swift in Sources */,
 				E281DC25272EDD3500A02890 /* NeedleGenerated.swift in Sources */,

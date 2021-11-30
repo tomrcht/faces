@@ -12,10 +12,9 @@ import SnapKit
 final class ZoomableImageView: UIScrollView {
     // MARK: - Properties
     /// Track wether the user did double tap to zoom in
-    private var isZoomedIn = false
-    /// Offset around the image view to allow scrolling in the entire image
-    /// This prevents the issue where you can not go at the very top or bottom of the image
-    private let allowedOffset: CGFloat = 100
+    private var isZoomedIn: Bool {
+        zoomScale > 1
+    }
 
     private lazy var imageView: UIImageView = {
         let imageView = UIImageView()
@@ -50,19 +49,13 @@ final class ZoomableImageView: UIScrollView {
         imageView.image = image
         addSubview(imageView)
 
-        let imageHeight = imageView.image?.size.height ?? 0
-        let imageWidth = imageView.image?.size.width ?? 0
-        let newImageHeight = (imageHeight / imageWidth) * UIScreen.main.bounds.width
-
         imageView.snp.makeConstraints { make in
+            make.width.height.equalToSuperview()
             make.centerX.centerY.equalToSuperview()
-            make.width.equalToSuperview()
-
-            make.height.equalTo(newImageHeight + allowedOffset)
         }
 
         #if DEBUG
-        backgroundColor = .black
+        backgroundColor = .systemGreen
         imageView.backgroundColor = .systemYellow
         #endif
     }
@@ -77,12 +70,47 @@ final class ZoomableImageView: UIScrollView {
             let zoomLocation = CGRect(origin: location, size: .zero)
             zoom(to: zoomLocation, animated: true)
         }
-        isZoomedIn.toggle()
     }
 }
 
 extension ZoomableImageView: UIScrollViewDelegate {
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         imageView
+    }
+
+    func scrollViewDidZoom(_ scrollView: UIScrollView) {
+        guard zoomScale > 1 else {
+            scrollView.contentInset = .zero
+            return
+        }
+
+        guard let image = imageView.image else { return }
+
+        let widthRatio = imageView.frame.width / image.size.width
+        let heightRatio = imageView.frame.height / image.size.height
+        let sizeRatio = min(widthRatio, heightRatio)
+
+        let newImageWidth = image.size.width * sizeRatio
+        let newImageHeight = image.size.height * sizeRatio
+
+        let horizontalInset: CGFloat
+        if newImageWidth * zoomScale > imageView.frame.width {
+            horizontalInset = (newImageWidth - imageView.frame.width) / 2
+        } else {
+            horizontalInset = (frame.width - contentSize.width) / 2
+        }
+
+        let verticalInset: CGFloat
+        if newImageHeight * zoomScale > imageView.frame.height {
+            verticalInset = (newImageHeight - imageView.frame.height) / 2
+        } else {
+            verticalInset = (frame.height - contentSize.height) / 2
+        }
+
+        contentInset = UIEdgeInsets(
+            top: verticalInset,
+            left: horizontalInset,
+            bottom: verticalInset,
+            right: horizontalInset)
     }
 }
