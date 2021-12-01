@@ -68,15 +68,9 @@ final class ZoomViewController: UIViewController, ConnectedViewController {
             guard translation.y > 0 else { return }
 
             latestTranslationValue = translation
-            UIView.animate(
-                withDuration: 0.5,
-                delay: 0,
-                usingSpringWithDamping: 0.7,
-                initialSpringVelocity: 1,
-                options: .curveEaseOut
-            ) { [unowned self] in
-                self.zoomableImageView.transform = .init(translationX: 0, y: self.latestTranslationValue.y)
-            }
+            // We COULD animate here but there isn't really a visible difference
+            // We could also play with the scale but it gives a rather wonky effect so let's notr
+            zoomableImageView.transform = CGAffineTransform(translationX: 0, y: translation.y)
 
         case .ended:
             if velocity.y > 1500 || latestTranslationValue.y > 250 {
@@ -87,7 +81,10 @@ final class ZoomViewController: UIViewController, ConnectedViewController {
                     initialSpringVelocity: 1,
                     options: .curveEaseOut
                 ) { [unowned self] in
-                    self.zoomableImageView.transform = .init(translationX: 0, y: zoomableImageView.frame.height)
+                    self.zoomableImageView.transform = CGAffineTransform(
+                        translationX: 0,
+                        y: zoomableImageView.frame.height
+                    )
                 } completion: { _ in
                     self.zoomableImageView.removeFromSuperview()
                 }
