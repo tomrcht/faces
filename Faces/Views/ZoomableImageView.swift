@@ -10,12 +10,7 @@ import UIKit
 import SnapKit
 
 final class ZoomableImageView: UIScrollView {
-    // MARK: - Properties
-    /// Track wether the user did double tap to zoom in
-    private var isZoomedIn: Bool {
-        zoomScale > 1
-    }
-
+    // MARK: - UI
     private lazy var imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
@@ -28,12 +23,11 @@ final class ZoomableImageView: UIScrollView {
         setup(with: image)
     }
 
-    required init?(coder: NSCoder) {
-        notImplemented()
-    }
+    required init?(coder: NSCoder) { notImplemented() }
 
     private func setup(with image: UIImage) {
         // ScrollView setup
+        backgroundColor = .black
         minimumZoomScale = 1
         maximumZoomScale = 4
         showsHorizontalScrollIndicator = false
@@ -48,23 +42,17 @@ final class ZoomableImageView: UIScrollView {
         // ImageView setup
         imageView.image = image
         addSubview(imageView)
-
         imageView.snp.makeConstraints { make in
             make.width.height.equalToSuperview()
             make.centerX.centerY.equalToSuperview()
         }
-
-        #if DEBUG
-        backgroundColor = .systemGreen
-        imageView.backgroundColor = .systemYellow
-        #endif
     }
 
     // MARK: - Gestures
     @objc
     private func onDoubleTap(_ sender: UITapGestureRecognizer) {
-        if isZoomedIn {
-            setZoomScale(1.0, animated: true)
+        if zoomScale > 1 {
+            setZoomScale(1, animated: true)
         } else {
             let location = sender.location(in: imageView)
             let zoomLocation = CGRect(origin: location, size: .zero)

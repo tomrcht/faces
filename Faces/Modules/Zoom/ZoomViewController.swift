@@ -21,6 +21,13 @@ final class ZoomViewController: UIViewController, ConnectedViewController {
         let imageView = ZoomableImageView(image: image)
         return imageView
     }()
+    private lazy var showImageViewButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Show!", for: .normal)
+        button.setTitleColor(.systemRed, for: .normal)
+        button.addTarget(self, action: #selector(onShowTapped), for: .touchUpInside)
+        return button
+    }()
 
     // MARK: - Lifecycle
     init(viewModel: ZoomViewModel) {
@@ -41,11 +48,24 @@ final class ZoomViewController: UIViewController, ConnectedViewController {
 
         view.backgroundColor = .white
 
+        view.addSubview(showImageViewButton)
+        showImageViewButton.snp.makeConstraints { make in
+            make.center.equalToSuperview()
+        }
+    }
+
+    func bindViewModel() { }
+
+    // MARK: - Selectors
+    @objc
+    private func onShowTapped() {
         guard let window = UIApplication.appWindow else {
             assertionFailure("Could not get app window")
             return
         }
 
+        zoomableImageView.transform = .identity
+        zoomableImageView.layer.opacity = 0
         window.addSubview(zoomableImageView)
         zoomableImageView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
@@ -54,12 +74,14 @@ final class ZoomViewController: UIViewController, ConnectedViewController {
         let dragDownGesture = UIPanGestureRecognizer(target: self, action: #selector(panGestureRecognizerHandler))
         dragDownGesture.delegate = self
         zoomableImageView.addGestureRecognizer(dragDownGesture)
+
+        UIView.animate(withDuration: 0.2) { [unowned self] in
+            self.zoomableImageView.layer.opacity = 1
+        }
     }
 
-    func bindViewModel() { }
-
     @objc
-    func panGestureRecognizerHandler(_ sender: UIPanGestureRecognizer) {
+    private func panGestureRecognizerHandler(_ sender: UIPanGestureRecognizer) {
         let translation = sender.translation(in: zoomableImageView)
         let velocity = sender.velocity(in: zoomableImageView)
 
