@@ -52,6 +52,7 @@ final class ZoomViewController: UIViewController, ConnectedViewController {
         }
 
         let dragDownGesture = UIPanGestureRecognizer(target: self, action: #selector(panGestureRecognizerHandler))
+        dragDownGesture.delegate = self
         zoomableImageView.addGestureRecognizer(dragDownGesture)
     }
 
@@ -116,5 +117,14 @@ final class ZoomViewController: UIViewController, ConnectedViewController {
         ) { [unowned self] in
             self.zoomableImageView.transform = .identity
         }
+    }
+}
+
+extension ZoomViewController: UIGestureRecognizerDelegate {
+    func gestureRecognizer(
+        _ gestureRecognizer: UIGestureRecognizer,
+        shouldRequireFailureOf otherGestureRecognizer: UIGestureRecognizer
+    ) -> Bool {
+        zoomableImageView.zoomScale > 1.2
     }
 }
