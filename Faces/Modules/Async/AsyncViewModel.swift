@@ -9,10 +9,33 @@ import Foundation
 import Combine
 
 final class AsyncViewModel: ConnectedViewModel {
-    let builder: AsyncBuilder
+    let isLoading = CurrentValueSubject<Bool, Never>(false)
+    let currentQuote = CurrentValueSubject<KanyeQuote?, Never>(nil)
+    let currentError = CurrentValueSubject<Error?, Never>(nil)
+
     var bag = Set<AnyCancellable>()
 
-    init(builder: AsyncBuilder) {
+    let builder: AsyncBuilder
+    private let kanyeService: KanyeService
+
+    init(builder: AsyncBuilder, kanyeService: KanyeService) {
         self.builder = builder
+        self.kanyeService = kanyeService
+    }
+
+    func getNewQuote() {
+        currentError.send(nil)
+        isLoading.send(true)
+
+        Task {
+            do {
+                let quote = try await kanyeService.quote()
+                currentQuote.send(quote)
+            } catch {
+                currentQuote.send(nil)
+                currentError.send(error)
+            }
+            isLoading.send(false)
+        }
     }
 }

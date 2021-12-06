@@ -18,11 +18,10 @@ final class RootComponent: BootstrapComponent {
         HomeComponent(parent: self)
     }
 
-    var zoomBuilder: ZoomBuilder {
-        ZoomComponent(parent: self)
-    }
-
-    var asyncBuilder: AsyncBuilder {
-        AsyncComponent(parent: self)
+    // MARK: - Shared services
+    var kanyeService: KanyeService {
+        shared {
+            KanyeService()
+        }
     }
 }

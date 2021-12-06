@@ -27,6 +27,7 @@ final class RootViewController: UITabBarController {
 
     private func setup() {
         tabBar.tintColor = .systemRed
+        tabBar.backgroundColor = .secondarySystemBackground
 
         let homeVC = homeBuilder.viewController
         homeVC.tabBarItem = UITabBarItem(

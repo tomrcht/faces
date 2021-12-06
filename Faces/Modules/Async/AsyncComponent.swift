@@ -9,16 +9,20 @@ import Foundation
 import UIKit
 import NeedleFoundation
 
+protocol AsyncDependencies: Dependency {
+    var kanyeService: KanyeService { get }
+}
+
 protocol AsyncBuilder {
     var asyncViewController: UIViewController { get }
 }
 
-final class AsyncComponent: Component<EmptyDependency>, AsyncBuilder {
+final class AsyncComponent: Component<AsyncDependencies>, AsyncBuilder {
     var asyncViewController: UIViewController {
         AsyncViewController(viewModel: asyncViewModel)
     }
 
     var asyncViewModel: AsyncViewModel {
-        AsyncViewModel(builder: self)
+        AsyncViewModel(builder: self, kanyeService: dependency.kanyeService)
     }
 }

@@ -38,7 +38,6 @@ final class NavigationCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
 
         backgroundColor = .white
-
         contentView.addSubview(iconView)
         iconView.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(16)

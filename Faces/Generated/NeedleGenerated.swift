@@ -11,15 +11,15 @@ private let needleDependenciesHash : String? = nil
 
 public func registerProviderFactories() {
     __DependencyProviderRegistry.instance.registerDependencyProviderFactory(for: "^->RootComponent->HomeComponent") { component in
-        return HomeDependencycad225e9266b3c9a56ddProvider(component: component)
-    }
-    __DependencyProviderRegistry.instance.registerDependencyProviderFactory(for: "^->RootComponent->AsyncComponent") { component in
         return EmptyDependencyProvider(component: component)
+    }
+    __DependencyProviderRegistry.instance.registerDependencyProviderFactory(for: "^->RootComponent->HomeComponent->AsyncComponent") { component in
+        return AsyncDependenciesfe393ca55edb2c04ec34Provider(component: component)
     }
     __DependencyProviderRegistry.instance.registerDependencyProviderFactory(for: "^->RootComponent") { component in
         return EmptyDependencyProvider(component: component)
     }
-    __DependencyProviderRegistry.instance.registerDependencyProviderFactory(for: "^->RootComponent->ZoomComponent") { component in
+    __DependencyProviderRegistry.instance.registerDependencyProviderFactory(for: "^->RootComponent->HomeComponent->ZoomComponent") { component in
         return EmptyDependencyProvider(component: component)
     }
     
@@ -27,21 +27,18 @@ public func registerProviderFactories() {
 
 // MARK: - Providers
 
-private class HomeDependencycad225e9266b3c9a56ddBaseProvider: HomeDependency {
-    var zoomBuilder: ZoomBuilder {
-        return rootComponent.zoomBuilder
-    }
-    var asyncBuilder: AsyncBuilder {
-        return rootComponent.asyncBuilder
+private class AsyncDependenciesfe393ca55edb2c04ec34BaseProvider: AsyncDependencies {
+    var kanyeService: KanyeService {
+        return rootComponent.kanyeService
     }
     private let rootComponent: RootComponent
     init(rootComponent: RootComponent) {
         self.rootComponent = rootComponent
     }
 }
-/// ^->RootComponent->HomeComponent
-private class HomeDependencycad225e9266b3c9a56ddProvider: HomeDependencycad225e9266b3c9a56ddBaseProvider {
+/// ^->RootComponent->HomeComponent->AsyncComponent
+private class AsyncDependenciesfe393ca55edb2c04ec34Provider: AsyncDependenciesfe393ca55edb2c04ec34BaseProvider {
     init(component: NeedleFoundation.Scope) {
-        super.init(rootComponent: component.parent as! RootComponent)
+        super.init(rootComponent: component.parent.parent as! RootComponent)
     }
 }

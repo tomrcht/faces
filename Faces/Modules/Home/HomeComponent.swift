@@ -9,18 +9,13 @@ import Foundation
 import NeedleFoundation
 import UIKit
 
-protocol HomeDependency: Dependency {
-    var zoomBuilder: ZoomBuilder { get }
-    var asyncBuilder: AsyncBuilder { get }
-}
-
 protocol HomeBuilder {
     var viewController: UIViewController { get }
     var zoomViewController: UIViewController { get }
     var asyncViewController: UIViewController { get }
 }
 
-final class HomeComponent: Component<HomeDependency>, HomeBuilder {
+final class HomeComponent: Component<EmptyDependency>, HomeBuilder {
     var viewController: UIViewController {
         HomeViewController(viewModel: homeViewModel)
     }
@@ -29,11 +24,20 @@ final class HomeComponent: Component<HomeDependency>, HomeBuilder {
         HomeViewModel(builder: self)
     }
 
+    // MARK: - Builders
+    private var zoomBuilder: ZoomBuilder {
+        ZoomComponent(parent: self)
+    }
+
+    private var asyncBuilder: AsyncBuilder {
+        AsyncComponent(parent: self)
+    }
+
     var zoomViewController: UIViewController {
-        dependency.zoomBuilder.zoomViewController
+        zoomBuilder.zoomViewController
     }
 
     var asyncViewController: UIViewController {
-        dependency.asyncBuilder.asyncViewController
+        asyncBuilder.asyncViewController
     }
 }
