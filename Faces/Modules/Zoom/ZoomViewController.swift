@@ -87,29 +87,15 @@ final class ZoomViewController: UIViewController, ConnectedViewController {
 
         switch sender.state {
         case .changed:
-            guard translation.y > 0 else { return }
-
             latestTranslationValue = translation
             // We COULD animate here but there isn't really a visible difference
-            // We could also play with the scale but it gives a rather wonky effect so let's notr
-            zoomableImageView.transform = CGAffineTransform(translationX: 0, y: translation.y)
+            // We could also play with the scale but it gives a rather wonky effect so let's not
+            zoomableImageView.layer.opacity = 1 - Float(abs(translation.y) / 1_000)
+            zoomableImageView.transform = CGAffineTransform(translationX: translation.x, y: translation.y)
 
         case .ended:
             if velocity.y > 1500 || latestTranslationValue.y > 250 {
-                UIView.animate(
-                    withDuration: 0.5,
-                    delay: 0,
-                    usingSpringWithDamping: 0.7,
-                    initialSpringVelocity: 1,
-                    options: .curveEaseOut
-                ) { [unowned self] in
-                    self.zoomableImageView.transform = CGAffineTransform(
-                        translationX: 0,
-                        y: zoomableImageView.frame.height
-                    )
-                } completion: { _ in
-                    self.zoomableImageView.removeFromSuperview()
-                }
+                removeImageView()
             } else {
                 resetImageViewPosition()
             }
@@ -126,6 +112,23 @@ final class ZoomViewController: UIViewController, ConnectedViewController {
         }
     }
 
+    private func removeImageView() {
+        UIView.animate(
+            withDuration: 0.5,
+            delay: 0,
+            usingSpringWithDamping: 0.7,
+            initialSpringVelocity: 1,
+            options: .curveEaseOut
+        ) { [unowned self] in
+            let imageViewHeight = self.zoomableImageView.frame.height
+            self.zoomableImageView.transform = CGAffineTransform(
+                translationX: self.latestTranslationValue.x,
+                y: imageViewHeight)
+        } completion: { [unowned self] _ in
+            self.zoomableImageView.removeFromSuperview()
+        }
+    }
+
     private func resetImageViewPosition() {
         UIView.animate(
             withDuration: 0.8,
@@ -134,12 +137,14 @@ final class ZoomViewController: UIViewController, ConnectedViewController {
             initialSpringVelocity: 1,
             options: .curveEaseOut
         ) { [unowned self] in
+            self.zoomableImageView.layer.opacity = 1
             self.zoomableImageView.transform = .identity
         }
     }
 }
 
 extension ZoomViewController: UIGestureRecognizerDelegate {
+    // If the view is currently zoomed-in more than 1.2x, we ignore the dismiss gesture
     func gestureRecognizer(
         _ gestureRecognizer: UIGestureRecognizer,
         shouldRequireFailureOf otherGestureRecognizer: UIGestureRecognizer
