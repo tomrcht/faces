@@ -14,6 +14,7 @@ final class HomeViewModel: ConnectedViewModel, RoutingViewModel {
     let dataSource: [NavigationCell.Data] = [
         .init(title: "Image zoom", iconName: "plus.magnifyingglass", tag: .zoom),
         .init(title: "Async", iconName: "timelapse", tag: .async),
+        .init(title: "Keyframe", iconName: "play.circle", tag: .keyframe)
     ]
 
     let builder: HomeBuilder
@@ -45,9 +46,10 @@ final class HomeViewModel: ConnectedViewModel, RoutingViewModel {
         switch dataSource[index].tag {
         case .zoom:
             router.send(.push(builder.zoomViewController))
-
         case .async:
             router.send(.push(builder.asyncViewController))
+        case .keyframe:
+            router.send(.push(builder.keyframeController))
         }
     }
 }

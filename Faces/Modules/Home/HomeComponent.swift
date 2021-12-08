@@ -13,6 +13,7 @@ protocol HomeBuilder {
     var viewController: UIViewController { get }
     var zoomViewController: UIViewController { get }
     var asyncViewController: UIViewController { get }
+    var keyframeController: UIViewController { get }
 }
 
 final class HomeComponent: Component<EmptyDependency>, HomeBuilder {
@@ -33,11 +34,20 @@ final class HomeComponent: Component<EmptyDependency>, HomeBuilder {
         AsyncComponent(parent: self)
     }
 
+    private var keyframeBuilder: KeyframeBuilder {
+        KeyframeComponent(parent: self)
+    }
+
+    // MARK: - Entry ViewControllers
     var zoomViewController: UIViewController {
         zoomBuilder.zoomViewController
     }
 
     var asyncViewController: UIViewController {
         asyncBuilder.asyncViewController
+    }
+
+    var keyframeController: UIViewController {
+        keyframeBuilder.keyframeController
     }
 }

@@ -10,6 +10,8 @@
 		9217E4CA275E0D0800D91875 /* KanyeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9217E4C9275E0D0800D91875 /* KanyeService.swift */; };
 		9217E4CD275E0EF100D91875 /* KanyeQuote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9217E4CC275E0EF100D91875 /* KanyeQuote.swift */; };
 		9217E4CF275E545D00D91875 /* UIEdgeInsets+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9217E4CE275E545D00D91875 /* UIEdgeInsets+Extension.swift */; };
+		92622E6D2760EBD80033126D /* KeyframeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92622E6C2760EBD80033126D /* KeyframeViewController.swift */; };
+		92622E6F2760EBEC0033126D /* KeyframeComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92622E6E2760EBEC0033126D /* KeyframeComponent.swift */; };
 		9277315C2756398D0060793A /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9277315B2756398D0060793A /* UIApplication+Extension.swift */; };
 		92BED92327567FEA001FEA08 /* GestureRecognizer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BED92227567FEA001FEA08 /* GestureRecognizer+Extension.swift */; };
 		E22242F627550CC400EF74FF /* ConnectedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22242F527550CC400EF74FF /* ConnectedViewController.swift */; };
@@ -62,6 +64,8 @@
 		9217E4C9275E0D0800D91875 /* KanyeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanyeService.swift; sourceTree = "<group>"; };
 		9217E4CC275E0EF100D91875 /* KanyeQuote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanyeQuote.swift; sourceTree = "<group>"; };
 		9217E4CE275E545D00D91875 /* UIEdgeInsets+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIEdgeInsets+Extension.swift"; sourceTree = "<group>"; };
+		92622E6C2760EBD80033126D /* KeyframeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyframeViewController.swift; sourceTree = "<group>"; };
+		92622E6E2760EBEC0033126D /* KeyframeComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyframeComponent.swift; sourceTree = "<group>"; };
 		9277315B2756398D0060793A /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
 		92BED92227567FEA001FEA08 /* GestureRecognizer+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GestureRecognizer+Extension.swift"; sourceTree = "<group>"; };
 		E22242F527550CC400EF74FF /* ConnectedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectedViewController.swift; sourceTree = "<group>"; };
@@ -136,6 +140,15 @@
 				9217E4CC275E0EF100D91875 /* KanyeQuote.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		92622E6B2760EBA90033126D /* KeyframeAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				92622E6E2760EBEC0033126D /* KeyframeComponent.swift */,
+				92622E6C2760EBD80033126D /* KeyframeViewController.swift */,
+			);
+			path = KeyframeAnimation;
 			sourceTree = "<group>";
 		};
 		E22242F92755169400EF74FF /* Zoom */ = {
@@ -227,6 +240,7 @@
 				E281DC13272EABDE00A02890 /* Home */,
 				E22242F92755169400EF74FF /* Zoom */,
 				E22243002755209B00EF74FF /* Async */,
+				92622E6B2760EBA90033126D /* KeyframeAnimation */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -458,6 +472,7 @@
 				E25BE3DC272DB898007EA317 /* AppDelegate.swift in Sources */,
 				9217E4CF275E545D00D91875 /* UIEdgeInsets+Extension.swift in Sources */,
 				E22242FB275516B000EF74FF /* ZoomComponent.swift in Sources */,
+				92622E6D2760EBD80033126D /* KeyframeViewController.swift in Sources */,
 				E281DC1A272EB87800A02890 /* HomeViewModel.swift in Sources */,
 				E281DC1C272EB93C00A02890 /* NotImplemented.swift in Sources */,
 				E22243082755274200EF74FF /* ZoomableImageView.swift in Sources */,
@@ -472,6 +487,7 @@
 				E25BE40F272DDACD007EA317 /* RootViewController.swift in Sources */,
 				E281DC25272EDD3500A02890 /* NeedleGenerated.swift in Sources */,
 				E22243062755214200EF74FF /* AsyncViewController.swift in Sources */,
+				92622E6F2760EBEC0033126D /* KeyframeComponent.swift in Sources */,
 				E25A1E2F2732896D008B6001 /* NavigationCell.swift in Sources */,
 				E2224302275520AA00EF74FF /* AsyncComponent.swift in Sources */,
 				E22242FF2755172D00EF74FF /* ZoomViewModel.swift in Sources */,

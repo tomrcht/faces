@@ -79,5 +79,6 @@ extension NavigationCell {
     enum NavigationTag {
         case zoom
         case `async`
+        case keyframe
     }
 }
