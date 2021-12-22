@@ -14,6 +14,8 @@ protocol HomeBuilder {
     var zoomViewController: UIViewController { get }
     var asyncViewController: UIViewController { get }
     var keyframeController: UIViewController { get }
+    var coreAnimationController: UIViewController { get }
+    var themeController: UIViewController { get }
 }
 
 final class HomeComponent: Component<EmptyDependency>, HomeBuilder {
@@ -23,6 +25,27 @@ final class HomeComponent: Component<EmptyDependency>, HomeBuilder {
 
     private var homeViewModel: HomeViewModel {
         HomeViewModel(builder: self)
+    }
+
+    // MARK: - Entry ViewControllers
+    var zoomViewController: UIViewController {
+        zoomBuilder.zoomViewController
+    }
+
+    var asyncViewController: UIViewController {
+        asyncBuilder.asyncViewController
+    }
+
+    var keyframeController: UIViewController {
+        keyframeBuilder.keyframeController
+    }
+
+    var coreAnimationController: UIViewController {
+        coreAnimationBuilder.coreAnimationController
+    }
+
+    var themeController: UIViewController {
+        themeBuilder.themeViewController
     }
 
     // MARK: - Builders
@@ -38,16 +61,11 @@ final class HomeComponent: Component<EmptyDependency>, HomeBuilder {
         KeyframeComponent(parent: self)
     }
 
-    // MARK: - Entry ViewControllers
-    var zoomViewController: UIViewController {
-        zoomBuilder.zoomViewController
+    private var coreAnimationBuilder: CoreAnimationBuilder {
+        CoreAnimationComponent(parent: self)
     }
 
-    var asyncViewController: UIViewController {
-        asyncBuilder.asyncViewController
-    }
-
-    var keyframeController: UIViewController {
-        keyframeBuilder.keyframeController
+    private var themeBuilder: ThemeBuilder {
+        ThemeComponent(parent: self)
     }
 }

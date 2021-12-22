@@ -14,6 +14,8 @@
 		92622E6F2760EBEC0033126D /* KeyframeComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92622E6E2760EBEC0033126D /* KeyframeComponent.swift */; };
 		9277315C2756398D0060793A /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9277315B2756398D0060793A /* UIApplication+Extension.swift */; };
 		92BED92327567FEA001FEA08 /* GestureRecognizer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BED92227567FEA001FEA08 /* GestureRecognizer+Extension.swift */; };
+		E21E04752766662800820E9F /* CoreAnimationComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21E04742766662800820E9F /* CoreAnimationComponent.swift */; };
+		E21E04772766666000820E9F /* CoreAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21E04762766666000820E9F /* CoreAnimationViewController.swift */; };
 		E22242F627550CC400EF74FF /* ConnectedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22242F527550CC400EF74FF /* ConnectedViewController.swift */; };
 		E22242F827550CE400EF74FF /* ConnectedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22242F727550CE400EF74FF /* ConnectedViewModel.swift */; };
 		E22242FB275516B000EF74FF /* ZoomComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22242FA275516B000EF74FF /* ZoomComponent.swift */; };
@@ -33,6 +35,10 @@
 		E25BE3FF272DB899007EA317 /* FacesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25BE3FE272DB899007EA317 /* FacesUITestsLaunchTests.swift */; };
 		E25BE40F272DDACD007EA317 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25BE40E272DDACD007EA317 /* RootViewController.swift */; };
 		E271F0D327357CF9009162E3 /* RouterEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E271F0D227357CF9009162E3 /* RouterEvent.swift */; };
+		E278803A27693A4F007D035D /* ThemeComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E278803927693A4F007D035D /* ThemeComponent.swift */; };
+		E278803C27693A5E007D035D /* ThemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E278803B27693A5E007D035D /* ThemeViewController.swift */; };
+		E278803E27693A67007D035D /* ThemeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E278803D27693A67007D035D /* ThemeViewModel.swift */; };
+		E278804027694C56007D035D /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E278803F27694C56007D035D /* ThemeManager.swift */; };
 		E281DC0D272EAA0A00A02890 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = E281DC0C272EAA0A00A02890 /* SnapKit */; };
 		E281DC10272EAA1F00A02890 /* NeedleFoundation in Frameworks */ = {isa = PBXBuildFile; productRef = E281DC0F272EAA1F00A02890 /* NeedleFoundation */; };
 		E281DC12272EAA3800A02890 /* RootComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E281DC11272EAA3800A02890 /* RootComponent.swift */; };
@@ -68,6 +74,8 @@
 		92622E6E2760EBEC0033126D /* KeyframeComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyframeComponent.swift; sourceTree = "<group>"; };
 		9277315B2756398D0060793A /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
 		92BED92227567FEA001FEA08 /* GestureRecognizer+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GestureRecognizer+Extension.swift"; sourceTree = "<group>"; };
+		E21E04742766662800820E9F /* CoreAnimationComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreAnimationComponent.swift; sourceTree = "<group>"; };
+		E21E04762766666000820E9F /* CoreAnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreAnimationViewController.swift; sourceTree = "<group>"; };
 		E22242F527550CC400EF74FF /* ConnectedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectedViewController.swift; sourceTree = "<group>"; };
 		E22242F727550CE400EF74FF /* ConnectedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectedViewModel.swift; sourceTree = "<group>"; };
 		E22242FA275516B000EF74FF /* ZoomComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomComponent.swift; sourceTree = "<group>"; };
@@ -91,6 +99,10 @@
 		E25BE3FE272DB899007EA317 /* FacesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacesUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		E25BE40E272DDACD007EA317 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		E271F0D227357CF9009162E3 /* RouterEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterEvent.swift; sourceTree = "<group>"; };
+		E278803927693A4F007D035D /* ThemeComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeComponent.swift; sourceTree = "<group>"; };
+		E278803B27693A5E007D035D /* ThemeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeViewController.swift; sourceTree = "<group>"; };
+		E278803D27693A67007D035D /* ThemeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeViewModel.swift; sourceTree = "<group>"; };
+		E278803F27694C56007D035D /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
 		E281DC11272EAA3800A02890 /* RootComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootComponent.swift; sourceTree = "<group>"; };
 		E281DC14272EABF800A02890 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		E281DC19272EB87800A02890 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -130,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				9217E4C9275E0D0800D91875 /* KanyeService.swift */,
+				E278803F27694C56007D035D /* ThemeManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -149,6 +162,15 @@
 				92622E6C2760EBD80033126D /* KeyframeViewController.swift */,
 			);
 			path = KeyframeAnimation;
+			sourceTree = "<group>";
+		};
+		E21E04732766660800820E9F /* CoreAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				E21E04742766662800820E9F /* CoreAnimationComponent.swift */,
+				E21E04762766666000820E9F /* CoreAnimationViewController.swift */,
+			);
+			path = CoreAnimation;
 			sourceTree = "<group>";
 		};
 		E22242F92755169400EF74FF /* Zoom */ = {
@@ -241,6 +263,8 @@
 				E22242F92755169400EF74FF /* Zoom */,
 				E22243002755209B00EF74FF /* Async */,
 				92622E6B2760EBA90033126D /* KeyframeAnimation */,
+				E21E04732766660800820E9F /* CoreAnimation */,
+				E278803827693A34007D035D /* Theme */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -261,6 +285,16 @@
 				E281DC11272EAA3800A02890 /* RootComponent.swift */,
 			);
 			path = Root;
+			sourceTree = "<group>";
+		};
+		E278803827693A34007D035D /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				E278803927693A4F007D035D /* ThemeComponent.swift */,
+				E278803B27693A5E007D035D /* ThemeViewController.swift */,
+				E278803D27693A67007D035D /* ThemeViewModel.swift */,
+			);
+			path = Theme;
 			sourceTree = "<group>";
 		};
 		E281DC13272EABDE00A02890 /* Home */ = {
@@ -467,14 +501,18 @@
 				E281DC15272EABF800A02890 /* HomeViewController.swift in Sources */,
 				E22242FD2755172600EF74FF /* ZoomViewController.swift in Sources */,
 				E271F0D327357CF9009162E3 /* RouterEvent.swift in Sources */,
+				E21E04752766662800820E9F /* CoreAnimationComponent.swift in Sources */,
 				E2224304275520F400EF74FF /* AsyncViewModel.swift in Sources */,
 				E22242F627550CC400EF74FF /* ConnectedViewController.swift in Sources */,
 				E25BE3DC272DB898007EA317 /* AppDelegate.swift in Sources */,
+				E278803A27693A4F007D035D /* ThemeComponent.swift in Sources */,
 				9217E4CF275E545D00D91875 /* UIEdgeInsets+Extension.swift in Sources */,
+				E278803C27693A5E007D035D /* ThemeViewController.swift in Sources */,
 				E22242FB275516B000EF74FF /* ZoomComponent.swift in Sources */,
 				92622E6D2760EBD80033126D /* KeyframeViewController.swift in Sources */,
 				E281DC1A272EB87800A02890 /* HomeViewModel.swift in Sources */,
 				E281DC1C272EB93C00A02890 /* NotImplemented.swift in Sources */,
+				E278803E27693A67007D035D /* ThemeViewModel.swift in Sources */,
 				E22243082755274200EF74FF /* ZoomableImageView.swift in Sources */,
 				E281DC21272ED9C100A02890 /* HomeComponent.swift in Sources */,
 				92BED92327567FEA001FEA08 /* GestureRecognizer+Extension.swift in Sources */,
@@ -484,6 +522,7 @@
 				9277315C2756398D0060793A /* UIApplication+Extension.swift in Sources */,
 				E22242F827550CE400EF74FF /* ConnectedViewModel.swift in Sources */,
 				9217E4CD275E0EF100D91875 /* KanyeQuote.swift in Sources */,
+				E21E04772766666000820E9F /* CoreAnimationViewController.swift in Sources */,
 				E25BE40F272DDACD007EA317 /* RootViewController.swift in Sources */,
 				E281DC25272EDD3500A02890 /* NeedleGenerated.swift in Sources */,
 				E22243062755214200EF74FF /* AsyncViewController.swift in Sources */,
@@ -491,6 +530,7 @@
 				E25A1E2F2732896D008B6001 /* NavigationCell.swift in Sources */,
 				E2224302275520AA00EF74FF /* AsyncComponent.swift in Sources */,
 				E22242FF2755172D00EF74FF /* ZoomViewModel.swift in Sources */,
+				E278804027694C56007D035D /* ThemeManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -62,7 +62,7 @@ final class KeyframeViewController: UIViewController {
     @objc
     private func onIconTap() {
         let animation = CAKeyframeAnimation(keyPath: "transform.scale")
-        animation.values = [0, 0.4, 1.1, 0.9, 1]
+        animation.values = [0, 0.5, 1.2, 0.9, 1]
         animation.duration = 0.4
         animation.calculationMode = .cubic
         icon.layer.add(animation, forKey: "scale")

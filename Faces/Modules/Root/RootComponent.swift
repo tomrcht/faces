@@ -24,4 +24,10 @@ final class RootComponent: BootstrapComponent {
             KanyeService()
         }
     }
+
+    var themeManager: ThemeManager {
+        shared {
+            ThemeManager()
+        }
+    }
 }

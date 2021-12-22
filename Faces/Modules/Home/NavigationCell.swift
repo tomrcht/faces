@@ -80,5 +80,7 @@ extension NavigationCell {
         case zoom
         case `async`
         case keyframe
+        case coreAnimation
+        case theme
     }
 }

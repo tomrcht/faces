@@ -14,7 +14,9 @@ final class HomeViewModel: ConnectedViewModel, RoutingViewModel {
     let dataSource: [NavigationCell.Data] = [
         .init(title: "Image zoom", iconName: "plus.magnifyingglass", tag: .zoom),
         .init(title: "Async", iconName: "timelapse", tag: .async),
-        .init(title: "Keyframe", iconName: "play.circle", tag: .keyframe)
+        .init(title: "Keyframe", iconName: "play.circle", tag: .keyframe),
+        .init(title: "Core Animation", iconName: "play.circle.fill", tag: .coreAnimation),
+        .init(title: "Theme", iconName: "paintpalette.fill", tag: .theme)
     ]
 
     let builder: HomeBuilder
@@ -50,6 +52,10 @@ final class HomeViewModel: ConnectedViewModel, RoutingViewModel {
             router.send(.push(builder.asyncViewController))
         case .keyframe:
             router.send(.push(builder.keyframeController))
+        case .coreAnimation:
+            router.send(.push(builder.coreAnimationController))
+        case .theme:
+            router.send(.push(builder.themeController))
         }
     }
 }
