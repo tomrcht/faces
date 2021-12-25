@@ -82,5 +82,6 @@ extension NavigationCell {
         case keyframe
         case coreAnimation
         case theme
+        case customSheet
     }
 }

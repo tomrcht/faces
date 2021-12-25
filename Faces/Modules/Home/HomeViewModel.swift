@@ -16,7 +16,8 @@ final class HomeViewModel: ConnectedViewModel, RoutingViewModel {
         .init(title: "Async", iconName: "timelapse", tag: .async),
         .init(title: "Keyframe", iconName: "play.circle", tag: .keyframe),
         .init(title: "Core Animation", iconName: "play.circle.fill", tag: .coreAnimation),
-        .init(title: "Theme", iconName: "paintpalette.fill", tag: .theme)
+//        .init(title: "Theme", iconName: "paintpalette.fill", tag: .theme),
+        .init(title: "Custom sheet", iconName: "arrow.up.doc", tag: .customSheet)
     ]
 
     let builder: HomeBuilder
@@ -56,6 +57,8 @@ final class HomeViewModel: ConnectedViewModel, RoutingViewModel {
             router.send(.push(builder.coreAnimationController))
         case .theme:
             router.send(.push(builder.themeController))
+        case .customSheet:
+            router.send(.push(builder.customSheetController))
         }
     }
 }

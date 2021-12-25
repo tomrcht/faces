@@ -16,6 +16,7 @@ protocol HomeBuilder {
     var keyframeController: UIViewController { get }
     var coreAnimationController: UIViewController { get }
     var themeController: UIViewController { get }
+    var customSheetController: UIViewController { get }
 }
 
 final class HomeComponent: Component<EmptyDependency>, HomeBuilder {
@@ -28,44 +29,18 @@ final class HomeComponent: Component<EmptyDependency>, HomeBuilder {
     }
 
     // MARK: - Entry ViewControllers
-    var zoomViewController: UIViewController {
-        zoomBuilder.zoomViewController
-    }
-
-    var asyncViewController: UIViewController {
-        asyncBuilder.asyncViewController
-    }
-
-    var keyframeController: UIViewController {
-        keyframeBuilder.keyframeController
-    }
-
-    var coreAnimationController: UIViewController {
-        coreAnimationBuilder.coreAnimationController
-    }
-
-    var themeController: UIViewController {
-        themeBuilder.themeViewController
-    }
+    var zoomViewController: UIViewController { zoomBuilder.zoomViewController }
+    var asyncViewController: UIViewController { asyncBuilder.asyncViewController }
+    var keyframeController: UIViewController { keyframeBuilder.keyframeController }
+    var coreAnimationController: UIViewController { coreAnimationBuilder.coreAnimationController }
+    var themeController: UIViewController { themeBuilder.themeViewController }
+    var customSheetController: UIViewController { customSheetBuilder.customSheetViewController }
 
     // MARK: - Builders
-    private var zoomBuilder: ZoomBuilder {
-        ZoomComponent(parent: self)
-    }
-
-    private var asyncBuilder: AsyncBuilder {
-        AsyncComponent(parent: self)
-    }
-
-    private var keyframeBuilder: KeyframeBuilder {
-        KeyframeComponent(parent: self)
-    }
-
-    private var coreAnimationBuilder: CoreAnimationBuilder {
-        CoreAnimationComponent(parent: self)
-    }
-
-    private var themeBuilder: ThemeBuilder {
-        ThemeComponent(parent: self)
-    }
+    private var zoomBuilder: ZoomBuilder { ZoomComponent(parent: self) }
+    private var asyncBuilder: AsyncBuilder { AsyncComponent(parent: self) }
+    private var keyframeBuilder: KeyframeBuilder { KeyframeComponent(parent: self) }
+    private var coreAnimationBuilder: CoreAnimationBuilder { CoreAnimationComponent(parent: self) }
+    private var themeBuilder: ThemeBuilder { ThemeComponent(parent: self) }
+    private var customSheetBuilder: CustomSheetBuilder { CustomSheetComponent(parent: self) }
 }
