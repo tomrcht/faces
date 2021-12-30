@@ -27,6 +27,9 @@
 		E2224304275520F400EF74FF /* AsyncViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2224303275520F400EF74FF /* AsyncViewModel.swift */; };
 		E22243062755214200EF74FF /* AsyncViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22243052755214200EF74FF /* AsyncViewController.swift */; };
 		E22243082755274200EF74FF /* ZoomableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22243072755274200EF74FF /* ZoomableImageView.swift */; };
+		E237A0532777B9EE005E5633 /* ConnectivityComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E237A0522777B9EE005E5633 /* ConnectivityComponent.swift */; };
+		E237A0552777BA23005E5633 /* ConnectivityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E237A0542777BA23005E5633 /* ConnectivityViewModel.swift */; };
+		E237A0572777BA8A005E5633 /* ConnectivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E237A0562777BA8A005E5633 /* ConnectivityViewController.swift */; };
 		E25A1E2F2732896D008B6001 /* NavigationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25A1E2E2732896D008B6001 /* NavigationCell.swift */; };
 		E25BE3DC272DB898007EA317 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25BE3DB272DB898007EA317 /* AppDelegate.swift */; };
 		E25BE3DE272DB898007EA317 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25BE3DD272DB898007EA317 /* SceneDelegate.swift */; };
@@ -36,6 +39,7 @@
 		E25BE3FD272DB899007EA317 /* FacesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25BE3FC272DB899007EA317 /* FacesUITests.swift */; };
 		E25BE3FF272DB899007EA317 /* FacesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25BE3FE272DB899007EA317 /* FacesUITestsLaunchTests.swift */; };
 		E25BE40F272DDACD007EA317 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25BE40E272DDACD007EA317 /* RootViewController.swift */; };
+		E26EA3172777BDEA006A7AB2 /* ConnectivityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26EA3162777BDEA006A7AB2 /* ConnectivityService.swift */; };
 		E271F0D327357CF9009162E3 /* RouterEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E271F0D227357CF9009162E3 /* RouterEvent.swift */; };
 		E278803A27693A4F007D035D /* ThemeComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E278803927693A4F007D035D /* ThemeComponent.swift */; };
 		E278803C27693A5E007D035D /* ThemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E278803B27693A5E007D035D /* ThemeViewController.swift */; };
@@ -89,6 +93,9 @@
 		E2224303275520F400EF74FF /* AsyncViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncViewModel.swift; sourceTree = "<group>"; };
 		E22243052755214200EF74FF /* AsyncViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncViewController.swift; sourceTree = "<group>"; };
 		E22243072755274200EF74FF /* ZoomableImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomableImageView.swift; sourceTree = "<group>"; };
+		E237A0522777B9EE005E5633 /* ConnectivityComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectivityComponent.swift; sourceTree = "<group>"; };
+		E237A0542777BA23005E5633 /* ConnectivityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectivityViewModel.swift; sourceTree = "<group>"; };
+		E237A0562777BA8A005E5633 /* ConnectivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectivityViewController.swift; sourceTree = "<group>"; };
 		E25A1E2E2732896D008B6001 /* NavigationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationCell.swift; sourceTree = "<group>"; };
 		E25BE3D8272DB898007EA317 /* Faces.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Faces.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E25BE3DB272DB898007EA317 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -102,6 +109,7 @@
 		E25BE3FC272DB899007EA317 /* FacesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacesUITests.swift; sourceTree = "<group>"; };
 		E25BE3FE272DB899007EA317 /* FacesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacesUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		E25BE40E272DDACD007EA317 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		E26EA3162777BDEA006A7AB2 /* ConnectivityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectivityService.swift; sourceTree = "<group>"; };
 		E271F0D227357CF9009162E3 /* RouterEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterEvent.swift; sourceTree = "<group>"; };
 		E278803927693A4F007D035D /* ThemeComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeComponent.swift; sourceTree = "<group>"; };
 		E278803B27693A5E007D035D /* ThemeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeViewController.swift; sourceTree = "<group>"; };
@@ -147,6 +155,7 @@
 			children = (
 				9217E4C9275E0D0800D91875 /* KanyeService.swift */,
 				E278803F27694C56007D035D /* ThemeManager.swift */,
+				E26EA3162777BDEA006A7AB2 /* ConnectivityService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -204,6 +213,16 @@
 				E22243052755214200EF74FF /* AsyncViewController.swift */,
 			);
 			path = Async;
+			sourceTree = "<group>";
+		};
+		E237A0512777B9DA005E5633 /* Connectivity */ = {
+			isa = PBXGroup;
+			children = (
+				E237A0522777B9EE005E5633 /* ConnectivityComponent.swift */,
+				E237A0542777BA23005E5633 /* ConnectivityViewModel.swift */,
+				E237A0562777BA8A005E5633 /* ConnectivityViewController.swift */,
+			);
+			path = Connectivity;
 			sourceTree = "<group>";
 		};
 		E25A1E2C2732894F008B6001 /* Views */ = {
@@ -278,6 +297,7 @@
 				92622E6B2760EBA90033126D /* KeyframeAnimation */,
 				E21E04732766660800820E9F /* CoreAnimation */,
 				E278803827693A34007D035D /* Theme */,
+				E237A0512777B9DA005E5633 /* Connectivity */,
 				9265B845277332BE00276091 /* CustomSheet */,
 			);
 			path = Modules;
@@ -524,6 +544,7 @@
 				E278803C27693A5E007D035D /* ThemeViewController.swift in Sources */,
 				E22242FB275516B000EF74FF /* ZoomComponent.swift in Sources */,
 				9265B8492773330A00276091 /* CustomSheetViewController.swift in Sources */,
+				E26EA3172777BDEA006A7AB2 /* ConnectivityService.swift in Sources */,
 				92622E6D2760EBD80033126D /* KeyframeViewController.swift in Sources */,
 				E281DC1A272EB87800A02890 /* HomeViewModel.swift in Sources */,
 				E281DC1C272EB93C00A02890 /* NotImplemented.swift in Sources */,
@@ -534,13 +555,16 @@
 				9217E4CA275E0D0800D91875 /* KanyeService.swift in Sources */,
 				E281DC12272EAA3800A02890 /* RootComponent.swift in Sources */,
 				E25BE3DE272DB898007EA317 /* SceneDelegate.swift in Sources */,
+				E237A0572777BA8A005E5633 /* ConnectivityViewController.swift in Sources */,
 				9277315C2756398D0060793A /* UIApplication+Extension.swift in Sources */,
 				E22242F827550CE400EF74FF /* ConnectedViewModel.swift in Sources */,
+				E237A0532777B9EE005E5633 /* ConnectivityComponent.swift in Sources */,
 				9217E4CD275E0EF100D91875 /* KanyeQuote.swift in Sources */,
 				E21E04772766666000820E9F /* CoreAnimationViewController.swift in Sources */,
 				E25BE40F272DDACD007EA317 /* RootViewController.swift in Sources */,
 				9265B847277332DF00276091 /* CustomSheetComponent.swift in Sources */,
 				E281DC25272EDD3500A02890 /* NeedleGenerated.swift in Sources */,
+				E237A0552777BA23005E5633 /* ConnectivityViewModel.swift in Sources */,
 				E22243062755214200EF74FF /* AsyncViewController.swift in Sources */,
 				92622E6F2760EBEC0033126D /* KeyframeComponent.swift in Sources */,
 				E25A1E2F2732896D008B6001 /* NavigationCell.swift in Sources */,

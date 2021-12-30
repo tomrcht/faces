@@ -13,6 +13,9 @@ public func registerProviderFactories() {
     __DependencyProviderRegistry.instance.registerDependencyProviderFactory(for: "^->RootComponent->HomeComponent") { component in
         return EmptyDependencyProvider(component: component)
     }
+    __DependencyProviderRegistry.instance.registerDependencyProviderFactory(for: "^->RootComponent->HomeComponent->ConnectivityComponent") { component in
+        return ConnectivityDependenciesa0e804d9f31c43a0e732Provider(component: component)
+    }
     __DependencyProviderRegistry.instance.registerDependencyProviderFactory(for: "^->RootComponent->HomeComponent->AsyncComponent") { component in
         return AsyncDependenciesfe393ca55edb2c04ec34Provider(component: component)
     }
@@ -39,6 +42,21 @@ public func registerProviderFactories() {
 
 // MARK: - Providers
 
+private class ConnectivityDependenciesa0e804d9f31c43a0e732BaseProvider: ConnectivityDependencies {
+    var connectivityService: ConnectivityService {
+        return rootComponent.connectivityService
+    }
+    private let rootComponent: RootComponent
+    init(rootComponent: RootComponent) {
+        self.rootComponent = rootComponent
+    }
+}
+/// ^->RootComponent->HomeComponent->ConnectivityComponent
+private class ConnectivityDependenciesa0e804d9f31c43a0e732Provider: ConnectivityDependenciesa0e804d9f31c43a0e732BaseProvider {
+    init(component: NeedleFoundation.Scope) {
+        super.init(rootComponent: component.parent.parent as! RootComponent)
+    }
+}
 private class AsyncDependenciesfe393ca55edb2c04ec34BaseProvider: AsyncDependencies {
     var kanyeService: KanyeService {
         return rootComponent.kanyeService

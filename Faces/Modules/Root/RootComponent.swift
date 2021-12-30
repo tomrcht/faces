@@ -30,4 +30,10 @@ final class RootComponent: BootstrapComponent {
             ThemeManager()
         }
     }
+
+    var connectivityService: ConnectivityService {
+        shared {
+            ConnectivityService()
+        }
+    }
 }

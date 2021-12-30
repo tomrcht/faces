@@ -83,5 +83,6 @@ extension NavigationCell {
         case coreAnimation
         case theme
         case customSheet
+        case connectivity
     }
 }
