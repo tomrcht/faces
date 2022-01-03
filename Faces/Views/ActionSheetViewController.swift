@@ -8,10 +8,10 @@
 import UIKit
 
 final class ActionSheetViewController: UIViewController {
+    private let animated: Bool
     private let contentSize: Size
-    private let manuallyDismissable: Bool
-    private var bottomSafeAreaOffset: CGFloat {
-        view.safeAreaInsets.bottom // !!! value is 0
+    private var bottomOffset: CGFloat {
+        25
     }
 
     // MARK: - UI components
@@ -27,7 +27,7 @@ final class ActionSheetViewController: UIViewController {
     private let closeButton: UIButton = {
         let button = UIButton()
         button.setTitle("Close", for: .normal)
-        button.setTitleColor(.black, for: .normal)
+        button.setTitleColor(.gray, for: .normal)
         button.addTarget(self, action: #selector(handleCloseTap), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
@@ -47,7 +47,7 @@ final class ActionSheetViewController: UIViewController {
     required init?(coder: NSCoder) { notImplemented() }
     init(configuration: Configuration) {
         self.contentSize = configuration.size
-        self.manuallyDismissable = configuration.manuallyDismissable
+        self.animated = configuration.animated
 
         super.init(nibName: nil, bundle: nil)
         makeContentView()
@@ -62,20 +62,11 @@ final class ActionSheetViewController: UIViewController {
 
     /// Make the content view container and layout its subview(s)
     private func makeContentView() {
-        [
-            SheetActionView(action: SheetAction(title: "Foo", image: UIImage(systemName: "trash")) { print("foo") }),
-            SheetActionView(action: SheetAction(title: "Bar", image: UIImage(systemName: "heart")) { print("bar") }),
-            SheetActionView(action: SheetAction(title: "Foobar", image: UIImage(systemName: "flame")) { print("foobar") }),
-        ].forEach { sheetAction in
-            actionsStack.addArrangedSubview(sheetAction)
-        }
-
         contentView.addSubview(closeButton)
         contentView.addSubview(actionsStack)
-        print(bottomSafeAreaOffset)
         NSLayoutConstraint.activate([
             closeButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
-            closeButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -bottomSafeAreaOffset),
+            closeButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -bottomOffset),
 
             actionsStack.topAnchor.constraint(equalTo: contentView.topAnchor),
             actionsStack.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
@@ -101,11 +92,9 @@ final class ActionSheetViewController: UIViewController {
             topConstraint,
         ])
 
-        if manuallyDismissable {
-            let panGesture = UIPanGestureRecognizer()
-            panGesture.addTarget(self, action: #selector(handlePan))
-            view.addGestureRecognizer(panGesture)
-        }
+        let panGesture = UIPanGestureRecognizer()
+        panGesture.addTarget(self, action: #selector(handlePan))
+        view.addGestureRecognizer(panGesture)
     }
 
     /// Handle the pan gesture used to grow or shrink the sheet
@@ -124,10 +113,10 @@ final class ActionSheetViewController: UIViewController {
         case .cancelled, .ended:
             guard translation.y > 0 else { return }
             if verticalTranslationMagnitude > contentSize.constant / 2 || velocity.y > 1000 {
-                hideSheet(true)
+                hideSheet(animated)
                 return
             }
-            showSheet(true)
+            showSheet(animated)
 
         default:
             break
@@ -137,17 +126,18 @@ final class ActionSheetViewController: UIViewController {
     /// Handle a tap on the close button
     @objc
     private func handleCloseTap() {
-        hideSheet(true)
+        hideSheet(animated)
     }
 }
 
 // MARK: - Sheet manipulation
 extension ActionSheetViewController {
+    /// Add an action to the sheet
     ///
-    ///
-    ///
-    func addAction() {
-
+    /// The action stack starts empty, you need to add the actions before presenting the sheet to the user
+    func addAction(_ sheetAction: SheetAction) {
+        let sheetActionView = SheetActionView(action: sheetAction)
+        actionsStack.addArrangedSubview(sheetActionView)
     }
 
     /// Put the sheet content view in the user space
@@ -164,7 +154,7 @@ extension ActionSheetViewController {
                 self.view.layoutIfNeeded()
             } completion: { _ in }
         } else {
-            self.topConstraint.constant = 0
+            self.topConstraint.constant = -self.contentSize.constant
             self.view.layoutIfNeeded()
         }
     }
@@ -194,15 +184,15 @@ extension ActionSheetViewController {
     ///     - animated: Should the sheet disparition be animated
     private func hideSheet(_ animated: Bool) {
         hideBackdrop(animated)
+
+        self.topConstraint.constant = 0
         if animated {
             UIView.animate(withDuration: 0.24, delay: 0, options: .curveEaseInOut) {
-                self.topConstraint.constant = 0
                 self.view.layoutIfNeeded()
             } completion: { _ in
                 self.dismiss(animated: animated, completion: nil)
             }
         } else {
-            self.topConstraint.constant = 0
             self.view.layoutIfNeeded()
             dismiss(animated: animated, completion: nil)
         }
@@ -227,14 +217,6 @@ extension ActionSheetViewController {
 
 // MARK: Nested types
 extension ActionSheetViewController {
-    /// State of our sheet
-    ///
-    /// A partial sheet can grow or be dismissed while a full sheet can be shrinked or dismissed
-    enum State {
-        case partial
-        case full
-        case none
-    }
     /// Defines the initial size for the sheet
     ///
     /// - `small`: 100pt
@@ -260,26 +242,17 @@ extension ActionSheetViewController {
     /// Configures aspects of our sheet
     struct Configuration {
         let size: Size
-        let manuallyDismissable: Bool
+        let animated: Bool
+
+        init(size: Size, animated: Bool = true) {
+            self.size = size
+            self.animated = animated
+        }
     }
 }
-
-// MARK: - Debug help
-private extension ActionSheetViewController {
-    func makeFakeLabel(ofColor textColor: UIColor = .black) -> UILabel {
-        let label = UILabel()
-        label.text = UUID().uuidString
-        label.textColor = textColor
-        label.font = .systemFont(ofSize: 12, weight: .regular)
-        return label
-    }
-}
-
 
 // MARK: - Sheet action
-
 typealias SheetActionHandler = () -> Void
-
 struct SheetAction {
     let title: String
     let image: UIImage?
@@ -306,7 +279,7 @@ private class SheetActionView: UIStackView {
         distribution = .fillProportionally
         spacing = 16
         isLayoutMarginsRelativeArrangement = true
-        directionalLayoutMargins = .init(top: 0, leading: 8, bottom: 0, trailing: 0)
+        directionalLayoutMargins = .init(top: 0, leading: 16, bottom: 0, trailing: 0)
 
         if let image = action.image {
             let imageView = UIImageView(image: image.withRenderingMode(.alwaysTemplate))

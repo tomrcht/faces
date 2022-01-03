@@ -39,7 +39,9 @@ final class CustomSheetViewController: UIViewController {
     // MARK: - Actions
     @objc
     private func openSheet() {
-        let sheet = ActionSheetViewController(configuration: .init(size: .custom(250), manuallyDismissable: true))
+        let sheet = ActionSheetViewController(configuration: .init(size: .custom(200)))
+        sheet.addAction(SheetAction(title: "Action 1", image: UIImage(systemName: "heart.fill")) { print("💜") })
+        sheet.addAction(SheetAction(title: "Action 2", image: UIImage(systemName: "trash")) { print("xxx") })
         present(sheet, animated: false)
     }
 }
