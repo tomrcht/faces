@@ -2,9 +2,10 @@
 //  ActionSheetViewController.swift
 //  Faces
 //
-//  Created by Tom Rochat on 30/12/2021.
+//  Created by Tom Rochat on 03/01/2022.
 //
 
+import Foundation
 import UIKit
 
 final class ActionSheetViewController: UIViewController {
@@ -15,7 +16,6 @@ final class ActionSheetViewController: UIViewController {
     }
 
     // MARK: - UI components
-    private var heightConstraint: NSLayoutConstraint!
     private var topConstraint: NSLayoutConstraint!
     /// Container view used to display the "real" sheet's content
     private let contentView: UIView = {
@@ -83,12 +83,11 @@ final class ActionSheetViewController: UIViewController {
         modalPresentationStyle = .overFullScreen
         view.addSubview(contentView)
 
-        heightConstraint = contentView.heightAnchor.constraint(equalToConstant: contentSize.constant)
         topConstraint = contentView.topAnchor.constraint(equalTo: view.bottomAnchor, constant: 0)
         NSLayoutConstraint.activate([
             contentView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             contentView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            heightConstraint,
+            contentView.heightAnchor.constraint(equalToConstant: contentSize.constant),
             topConstraint,
         ])
 
@@ -212,101 +211,5 @@ extension ActionSheetViewController {
         } else {
             self.view.backgroundColor = .clear
         }
-    }
-}
-
-// MARK: Nested types
-extension ActionSheetViewController {
-    /// Defines the initial size for the sheet
-    ///
-    /// - `small`: 100pt
-    /// - `medium`: 300pt
-    /// - `full`: screen size
-    /// - `custom`: user-defined values
-    enum Size: Equatable {
-        case small
-        case medium
-        case full
-        case custom(CGFloat)
-
-        var constant: CGFloat {
-            switch self {
-            case .small: return 100
-            case .medium: return 300
-            case .full: return UIScreen.main.bounds.height - 40
-            case .custom(let height): return height
-            }
-        }
-    }
-
-    /// Configures aspects of our sheet
-    struct Configuration {
-        let size: Size
-        let animated: Bool
-
-        init(size: Size, animated: Bool = true) {
-            self.size = size
-            self.animated = animated
-        }
-    }
-}
-
-// MARK: - Sheet action
-typealias SheetActionHandler = () -> Void
-struct SheetAction {
-    let title: String
-    let image: UIImage?
-    let handler: SheetActionHandler
-}
-
-private class SheetActionView: UIStackView {
-    private let handler: SheetActionHandler
-
-    init(action: SheetAction) {
-        self.handler = action.handler
-        super.init(frame: .zero)
-
-        setupStackView(with: action)
-    }
-
-    required init(coder: NSCoder) {
-        notImplemented()
-    }
-
-    private func setupStackView(with action: SheetAction) {
-        axis = .horizontal
-        alignment = .center
-        distribution = .fillProportionally
-        spacing = 16
-        isLayoutMarginsRelativeArrangement = true
-        directionalLayoutMargins = .init(top: 0, leading: 16, bottom: 0, trailing: 0)
-
-        if let image = action.image {
-            let imageView = UIImageView(image: image.withRenderingMode(.alwaysTemplate))
-            imageView.contentMode = .scaleAspectFit
-            imageView.tintColor = .black
-            addArrangedSubview(imageView)
-
-            NSLayoutConstraint.activate([
-                imageView.widthAnchor.constraint(equalToConstant: 24),
-                imageView.heightAnchor.constraint(equalToConstant: 24),
-            ])
-        }
-
-        let titleLabel = UILabel()
-        titleLabel.font = .systemFont(ofSize: 18, weight: .regular)
-        titleLabel.text = action.title
-        titleLabel.textColor = .black
-        addArrangedSubview(titleLabel)
-
-        let tapGesture = UITapGestureRecognizer()
-        tapGesture.numberOfTapsRequired = 1
-        tapGesture.addTarget(self, action: #selector(tapHandler))
-        addGestureRecognizer(tapGesture)
-    }
-
-    @objc
-    private func tapHandler() {
-        handler()
     }
 }

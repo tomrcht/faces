@@ -11,12 +11,14 @@
 		9217E4CD275E0EF100D91875 /* KanyeQuote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9217E4CC275E0EF100D91875 /* KanyeQuote.swift */; };
 		9217E4CF275E545D00D91875 /* UIEdgeInsets+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9217E4CE275E545D00D91875 /* UIEdgeInsets+Extension.swift */; };
 		923B2EF3277F72150077162C /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923B2EF2277F72150077162C /* UIView+Extension.swift */; };
+		923B2F18278331E50077162C /* ActionSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923B2F17278331E50077162C /* ActionSheetViewController.swift */; };
+		923B2F1A2783320F0077162C /* ActionSheet+Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923B2F192783320F0077162C /* ActionSheet+Configuration.swift */; };
+		923B2F1C278332300077162C /* SheetAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923B2F1B278332300077162C /* SheetAction.swift */; };
 		92622E6D2760EBD80033126D /* KeyframeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92622E6C2760EBD80033126D /* KeyframeViewController.swift */; };
 		92622E6F2760EBEC0033126D /* KeyframeComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92622E6E2760EBEC0033126D /* KeyframeComponent.swift */; };
 		9265B847277332DF00276091 /* CustomSheetComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9265B846277332DF00276091 /* CustomSheetComponent.swift */; };
 		9265B8492773330A00276091 /* CustomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9265B8482773330A00276091 /* CustomSheetViewController.swift */; };
 		9277315C2756398D0060793A /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9277315B2756398D0060793A /* UIApplication+Extension.swift */; };
-		929464E0277DFBD200A92D00 /* ActionSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929464DF277DFBD200A92D00 /* ActionSheetViewController.swift */; };
 		92BED92327567FEA001FEA08 /* GestureRecognizer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BED92227567FEA001FEA08 /* GestureRecognizer+Extension.swift */; };
 		E21E04752766662800820E9F /* CoreAnimationComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21E04742766662800820E9F /* CoreAnimationComponent.swift */; };
 		E21E04772766666000820E9F /* CoreAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21E04762766666000820E9F /* CoreAnimationViewController.swift */; };
@@ -79,12 +81,14 @@
 		9217E4CC275E0EF100D91875 /* KanyeQuote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanyeQuote.swift; sourceTree = "<group>"; };
 		9217E4CE275E545D00D91875 /* UIEdgeInsets+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIEdgeInsets+Extension.swift"; sourceTree = "<group>"; };
 		923B2EF2277F72150077162C /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		923B2F17278331E50077162C /* ActionSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionSheetViewController.swift; sourceTree = "<group>"; };
+		923B2F192783320F0077162C /* ActionSheet+Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ActionSheet+Configuration.swift"; sourceTree = "<group>"; };
+		923B2F1B278332300077162C /* SheetAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetAction.swift; sourceTree = "<group>"; };
 		92622E6C2760EBD80033126D /* KeyframeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyframeViewController.swift; sourceTree = "<group>"; };
 		92622E6E2760EBEC0033126D /* KeyframeComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyframeComponent.swift; sourceTree = "<group>"; };
 		9265B846277332DF00276091 /* CustomSheetComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSheetComponent.swift; sourceTree = "<group>"; };
 		9265B8482773330A00276091 /* CustomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSheetViewController.swift; sourceTree = "<group>"; };
 		9277315B2756398D0060793A /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
-		929464DF277DFBD200A92D00 /* ActionSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionSheetViewController.swift; sourceTree = "<group>"; };
 		92BED92227567FEA001FEA08 /* GestureRecognizer+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GestureRecognizer+Extension.swift"; sourceTree = "<group>"; };
 		E21E04742766662800820E9F /* CoreAnimationComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreAnimationComponent.swift; sourceTree = "<group>"; };
 		E21E04762766666000820E9F /* CoreAnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreAnimationViewController.swift; sourceTree = "<group>"; };
@@ -172,6 +176,16 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		923B2F16278331D60077162C /* ActionSheet */ = {
+			isa = PBXGroup;
+			children = (
+				923B2F17278331E50077162C /* ActionSheetViewController.swift */,
+				923B2F192783320F0077162C /* ActionSheet+Configuration.swift */,
+				923B2F1B278332300077162C /* SheetAction.swift */,
+			);
+			path = ActionSheet;
+			sourceTree = "<group>";
+		};
 		92622E6B2760EBA90033126D /* KeyframeAnimation */ = {
 			isa = PBXGroup;
 			children = (
@@ -232,8 +246,8 @@
 		E25A1E2C2732894F008B6001 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				923B2F16278331D60077162C /* ActionSheet */,
 				E22243072755274200EF74FF /* ZoomableImageView.swift */,
-				929464DF277DFBD200A92D00 /* ActionSheetViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -538,7 +552,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				929464E0277DFBD200A92D00 /* ActionSheetViewController.swift in Sources */,
+				923B2F1A2783320F0077162C /* ActionSheet+Configuration.swift in Sources */,
 				E281DC15272EABF800A02890 /* HomeViewController.swift in Sources */,
 				E22242FD2755172600EF74FF /* ZoomViewController.swift in Sources */,
 				E271F0D327357CF9009162E3 /* RouterEvent.swift in Sources */,
@@ -556,6 +570,7 @@
 				92622E6D2760EBD80033126D /* KeyframeViewController.swift in Sources */,
 				E281DC1A272EB87800A02890 /* HomeViewModel.swift in Sources */,
 				E281DC1C272EB93C00A02890 /* NotImplemented.swift in Sources */,
+				923B2F18278331E50077162C /* ActionSheetViewController.swift in Sources */,
 				E278803E27693A67007D035D /* ThemeViewModel.swift in Sources */,
 				E22243082755274200EF74FF /* ZoomableImageView.swift in Sources */,
 				E281DC21272ED9C100A02890 /* HomeComponent.swift in Sources */,
@@ -567,6 +582,7 @@
 				9277315C2756398D0060793A /* UIApplication+Extension.swift in Sources */,
 				E22242F827550CE400EF74FF /* ConnectedViewModel.swift in Sources */,
 				E237A0532777B9EE005E5633 /* ConnectivityComponent.swift in Sources */,
+				923B2F1C278332300077162C /* SheetAction.swift in Sources */,
 				9217E4CD275E0EF100D91875 /* KanyeQuote.swift in Sources */,
 				E21E04772766666000820E9F /* CoreAnimationViewController.swift in Sources */,
 				E25BE40F272DDACD007EA317 /* RootViewController.swift in Sources */,
