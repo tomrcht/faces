@@ -10,6 +10,9 @@
 		9217E4CA275E0D0800D91875 /* KanyeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9217E4C9275E0D0800D91875 /* KanyeService.swift */; };
 		9217E4CD275E0EF100D91875 /* KanyeQuote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9217E4CC275E0EF100D91875 /* KanyeQuote.swift */; };
 		9217E4CF275E545D00D91875 /* UIEdgeInsets+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9217E4CE275E545D00D91875 /* UIEdgeInsets+Extension.swift */; };
+		921974DE2799D04C00670790 /* AppNavigationComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921974DD2799D04C00670790 /* AppNavigationComponent.swift */; };
+		921974E02799D09100670790 /* AppNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921974DF2799D09100670790 /* AppNavigationViewController.swift */; };
+		921974E22799D0A100670790 /* AppNavigationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921974E12799D0A100670790 /* AppNavigationViewModel.swift */; };
 		923B2EF3277F72150077162C /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923B2EF2277F72150077162C /* UIView+Extension.swift */; };
 		923B2F18278331E50077162C /* ActionSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923B2F17278331E50077162C /* ActionSheetViewController.swift */; };
 		923B2F1A2783320F0077162C /* ActionSheet+Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923B2F192783320F0077162C /* ActionSheet+Configuration.swift */; };
@@ -80,6 +83,9 @@
 		9217E4C9275E0D0800D91875 /* KanyeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanyeService.swift; sourceTree = "<group>"; };
 		9217E4CC275E0EF100D91875 /* KanyeQuote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanyeQuote.swift; sourceTree = "<group>"; };
 		9217E4CE275E545D00D91875 /* UIEdgeInsets+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIEdgeInsets+Extension.swift"; sourceTree = "<group>"; };
+		921974DD2799D04C00670790 /* AppNavigationComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNavigationComponent.swift; sourceTree = "<group>"; };
+		921974DF2799D09100670790 /* AppNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNavigationViewController.swift; sourceTree = "<group>"; };
+		921974E12799D0A100670790 /* AppNavigationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNavigationViewModel.swift; sourceTree = "<group>"; };
 		923B2EF2277F72150077162C /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		923B2F17278331E50077162C /* ActionSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionSheetViewController.swift; sourceTree = "<group>"; };
 		923B2F192783320F0077162C /* ActionSheet+Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ActionSheet+Configuration.swift"; sourceTree = "<group>"; };
@@ -174,6 +180,16 @@
 				9217E4CC275E0EF100D91875 /* KanyeQuote.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		921974DC2799D04000670790 /* AppNavigation */ = {
+			isa = PBXGroup;
+			children = (
+				921974DD2799D04C00670790 /* AppNavigationComponent.swift */,
+				921974DF2799D09100670790 /* AppNavigationViewController.swift */,
+				921974E12799D0A100670790 /* AppNavigationViewModel.swift */,
+			);
+			path = AppNavigation;
 			sourceTree = "<group>";
 		};
 		923B2F16278331D60077162C /* ActionSheet */ = {
@@ -309,6 +325,7 @@
 		E25BE40B272DB8B3007EA317 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				921974DC2799D04000670790 /* AppNavigation */,
 				E25BE40D272DDAB5007EA317 /* Root */,
 				E281DC13272EABDE00A02890 /* Home */,
 				E22242F92755169400EF74FF /* Zoom */,
@@ -552,6 +569,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				921974E22799D0A100670790 /* AppNavigationViewModel.swift in Sources */,
 				923B2F1A2783320F0077162C /* ActionSheet+Configuration.swift in Sources */,
 				E281DC15272EABF800A02890 /* HomeViewController.swift in Sources */,
 				E22242FD2755172600EF74FF /* ZoomViewController.swift in Sources */,
@@ -575,7 +593,9 @@
 				E22243082755274200EF74FF /* ZoomableImageView.swift in Sources */,
 				E281DC21272ED9C100A02890 /* HomeComponent.swift in Sources */,
 				92BED92327567FEA001FEA08 /* GestureRecognizer+Extension.swift in Sources */,
+				921974DE2799D04C00670790 /* AppNavigationComponent.swift in Sources */,
 				9217E4CA275E0D0800D91875 /* KanyeService.swift in Sources */,
+				921974E02799D09100670790 /* AppNavigationViewController.swift in Sources */,
 				E281DC12272EAA3800A02890 /* RootComponent.swift in Sources */,
 				E25BE3DE272DB898007EA317 /* SceneDelegate.swift in Sources */,
 				E237A0572777BA8A005E5633 /* ConnectivityViewController.swift in Sources */,

@@ -18,7 +18,8 @@ final class HomeViewModel: ConnectedViewModel, RoutingViewModel {
         .init(title: "Core Animation", iconName: "play.circle.fill", tag: .coreAnimation),
 //        .init(title: "Theme", iconName: "paintpalette.fill", tag: .theme),
         .init(title: "Custom sheet", iconName: "arrow.up.doc", tag: .customSheet),
-        .init(title: "Connectivity", iconName: "wifi.circle", tag: .connectivity)
+        .init(title: "Connectivity", iconName: "wifi.circle", tag: .connectivity),
+        .init(title: "App navigation", iconName: "airplane", tag: .appNavigation),
     ]
 
     let builder: HomeBuilder
@@ -62,6 +63,8 @@ final class HomeViewModel: ConnectedViewModel, RoutingViewModel {
             router.send(.push(builder.customSheetController))
         case .connectivity:
             router.send(.push(builder.connectivityViewController))
+        case .appNavigation:
+            router.send(.push(builder.appNavigationViewController))
         }
     }
 }

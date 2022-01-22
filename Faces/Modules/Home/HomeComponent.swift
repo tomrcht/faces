@@ -18,6 +18,7 @@ protocol HomeBuilder {
     var themeController: UIViewController { get }
     var customSheetController: UIViewController { get }
     var connectivityViewController: UIViewController { get }
+    var appNavigationViewController: UIViewController { get }
 }
 
 final class HomeComponent: Component<EmptyDependency>, HomeBuilder {
@@ -37,6 +38,7 @@ final class HomeComponent: Component<EmptyDependency>, HomeBuilder {
     var themeController: UIViewController { themeBuilder.themeViewController }
     var customSheetController: UIViewController { customSheetBuilder.customSheetViewController }
     var connectivityViewController: UIViewController { connectivityBuilder.connectivityViewController }
+    var appNavigationViewController: UIViewController { appNavigationBuilder.appNavigationViewController }
 
     // MARK: - Builders
     private var zoomBuilder: ZoomBuilder { ZoomComponent(parent: self) }
@@ -46,4 +48,5 @@ final class HomeComponent: Component<EmptyDependency>, HomeBuilder {
     private var themeBuilder: ThemeBuilder { ThemeComponent(parent: self) }
     private var customSheetBuilder: CustomSheetBuilder { CustomSheetComponent(parent: self) }
     private var connectivityBuilder: ConnectivityBuilder { ConnectivityComponent(parent: self) }
+    private var appNavigationBuilder: AppNavigationBuilder { AppNavigationComponent(parent: self) }
 }
