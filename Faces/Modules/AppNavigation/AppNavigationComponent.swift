@@ -16,11 +16,6 @@ protocol AppNavigationBuilder {
 
 final class AppNavigationComponent: Component<EmptyDependency>, AppNavigationBuilder {
     let router = AppNavigationRouter()
-//    lazy var router: AppNavigationRouter = {
-//        let router = AppNavigationRouter()
-//        router.start(with: appNavigationViewController)
-//        return router
-//    }()
 
     var appNavigationViewController: UIViewController {
         AppNavigationViewController(viewModel: appNavigationViewModel)
@@ -34,13 +29,14 @@ final class AppNavigationComponent: Component<EmptyDependency>, AppNavigationBui
 // Trying things
 protocol Router {
     var root: UIViewController? { get set }
+
+    func start(with viewController: UIViewController)
 }
 
 final class AppNavigationRouter: Router {
     weak var root: UIViewController?
 
     func start(with viewController: UIViewController) {
-        print("did start")
         self.root = viewController
     }
 
@@ -50,13 +46,11 @@ final class AppNavigationRouter: Router {
     }
 
     func goToRedController() {
-        assert(root != nil)
         assert(root?.navigationController != nil)
         root?.navigationController?.pushViewController(RedViewController(nibName: nil, bundle: nil), animated: true)
     }
 
     func goToColoredController(_ color: UIColor) {
-        assert(root != nil)
         assert(root?.navigationController != nil)
         let vc = RedViewController(nibName: nil, bundle: nil)
         vc.view.backgroundColor = color
