@@ -10,7 +10,7 @@ import Combine
 import NeedleFoundation
 import UIKit
 
-final class HomeViewModel: ConnectedViewModel, RoutingViewModel {
+final class HomeViewModel: ConnectedViewModel, RoutedViewModel {
     let dataSource: [NavigationCell.Data] = [
         .init(title: "Image zoom", iconName: "plus.magnifyingglass", tag: .zoom),
         .init(title: "Async", iconName: "timelapse", tag: .async),
@@ -18,20 +18,18 @@ final class HomeViewModel: ConnectedViewModel, RoutingViewModel {
         .init(title: "Core Animation", iconName: "play.circle.fill", tag: .coreAnimation),
 //        .init(title: "Theme", iconName: "paintpalette.fill", tag: .theme),
         .init(title: "Custom sheet", iconName: "arrow.up.doc", tag: .customSheet),
-        .init(title: "Connectivity", iconName: "wifi.circle", tag: .connectivity),
-        .init(title: "App navigation", iconName: "airplane", tag: .appNavigation),
+        .init(title: "Connectivity", iconName: "wifi.circle", tag: .connectivity)
     ]
 
-    let builder: HomeBuilder
+    let router: HomeRouter
 
     // MARK: - Actions triggers
-    let router = PassthroughSubject<RouterEvent, Never>()
     let onRowSelected = PassthroughSubject<Int, Never>()
     var bag = Set<AnyCancellable>()
 
     // MARK: - Lifecycle
     init(builder: HomeBuilder) {
-        self.builder = builder
+        self.router = HomeRouter(builder: builder)
         setup()
     }
 
@@ -50,21 +48,19 @@ final class HomeViewModel: ConnectedViewModel, RoutingViewModel {
 
         switch dataSource[index].tag {
         case .zoom:
-            router.send(.push(builder.zoomViewController))
+            router.goToZoom()
         case .async:
-            router.send(.push(builder.asyncViewController))
+            router.goToAsync()
         case .keyframe:
-            router.send(.push(builder.keyframeController))
+            router.goToKeyframe()
         case .coreAnimation:
-            router.send(.push(builder.coreAnimationController))
+            router.goTocoreAnimation()
         case .theme:
-            router.send(.push(builder.themeController))
+            router.goTotheme()
         case .customSheet:
-            router.send(.push(builder.customSheetController))
+            router.goToCustomSheet()
         case .connectivity:
-            router.send(.push(builder.connectivityViewController))
-        case .appNavigation:
-            router.send(.push(builder.appNavigationViewController))
+            router.goToconnectivity()
         }
     }
 }

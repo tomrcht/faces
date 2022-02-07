@@ -8,7 +8,7 @@
 import UIKit
 import Combine
 
-final class HomeViewController: UITableViewController, ConnectedViewController, RoutableViewController {
+final class HomeViewController: UITableViewController, ConnectedViewController {
     let viewModel: HomeViewModel
     var bag = Set<AnyCancellable>()
 
@@ -40,15 +40,7 @@ final class HomeViewController: UITableViewController, ConnectedViewController, 
     }
 
     func bindViewModel() {
-        viewModel.router.sink { [unowned self] event in
-            self.onRouterEvent(event)
-        }.store(in: &bag)
-    }
-
-    func onRouterEvent(_ event: RouterEvent) {
-        if case let .push(controller) = event {
-            navigationController?.pushViewController(controller, animated: true)
-        }
+        viewModel.router.start(in: self)
     }
 }
 

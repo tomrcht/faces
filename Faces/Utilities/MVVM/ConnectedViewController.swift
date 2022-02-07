@@ -20,9 +20,3 @@ protocol ConnectedViewController {
     /// Bind the view controller and it's view model
     func bindViewModel()
 }
-
-/// Protocol that implements any routing capabilities inside a view controller
-protocol RoutableViewController {
-    /// React to any router event dispatched by the view model
-    func onRouterEvent(_ event: RouterEvent)
-}

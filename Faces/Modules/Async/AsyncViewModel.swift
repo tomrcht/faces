@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import UIKit
 
 final class AsyncViewModel: ConnectedViewModel {
     let isLoading = CurrentValueSubject<Bool, Never>(false)
@@ -15,11 +16,9 @@ final class AsyncViewModel: ConnectedViewModel {
 
     var bag = Set<AnyCancellable>()
 
-    let builder: AsyncBuilder
     private let kanyeService: KanyeService
 
-    init(builder: AsyncBuilder, kanyeService: KanyeService) {
-        self.builder = builder
+    init(kanyeService: KanyeService) {
         self.kanyeService = kanyeService
     }
 

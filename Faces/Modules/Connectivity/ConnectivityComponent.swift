@@ -23,6 +23,6 @@ final class ConnectivityComponent: Component<ConnectivityDependencies>, Connecti
     }
 
     private var connectivityViewModel: ConnectivityViewModel {
-        ConnectivityViewModel(builder: self, connectivityService: dependency.connectivityService)
+        ConnectivityViewModel(connectivityService: dependency.connectivityService)
     }
 }

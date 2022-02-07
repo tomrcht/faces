@@ -23,6 +23,6 @@ final class AsyncComponent: Component<AsyncDependencies>, AsyncBuilder {
     }
 
     var asyncViewModel: AsyncViewModel {
-        AsyncViewModel(builder: self, kanyeService: dependency.kanyeService)
+        AsyncViewModel(kanyeService: dependency.kanyeService)
     }
 }

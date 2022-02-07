@@ -84,6 +84,5 @@ extension NavigationCell {
         case theme
         case customSheet
         case connectivity
-        case appNavigation
     }
 }

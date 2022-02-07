@@ -12,13 +12,10 @@ final class ConnectivityViewModel: ConnectedViewModel {
     let isMonitoring: CurrentValueSubject<Bool, Never>
     var bag = Set<AnyCancellable>()
 
-    let builder: ConnectivityBuilder
     private let connectivityService: ConnectivityService
 
-    init(builder: ConnectivityBuilder, connectivityService: ConnectivityService) {
-        self.builder = builder
+    init(connectivityService: ConnectivityService) {
         self.connectivityService = connectivityService
-
         self.isMonitoring = self.connectivityService.isMonitoring
     }
 

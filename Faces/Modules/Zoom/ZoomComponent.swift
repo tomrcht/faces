@@ -19,6 +19,6 @@ final class ZoomComponent: Component<EmptyDependency>, ZoomBuilder {
     }
 
     private var zoomViewModel: ZoomViewModel {
-        ZoomViewModel(builder: self)
+        ZoomViewModel()
     }
 }

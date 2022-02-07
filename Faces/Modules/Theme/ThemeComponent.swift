@@ -23,6 +23,6 @@ final class ThemeComponent: Component<ThemeDependencies>, ThemeBuilder {
     }
 
     private var themeViewModel: ThemeViewModel {
-        ThemeViewModel(builder: self, themeManager: dependency.themeManager)
+        ThemeViewModel(themeManager: dependency.themeManager)
     }
 }

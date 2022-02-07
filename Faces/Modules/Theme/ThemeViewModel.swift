@@ -12,10 +12,8 @@ final class ThemeViewModel: ConnectedViewModel {
     var bag = Set<AnyCancellable>()
 
     let themeManager: ThemeManager
-    let builder: ThemeBuilder
 
-    init(builder: ThemeBuilder, themeManager: ThemeManager) {
+    init(themeManager: ThemeManager) {
         self.themeManager = themeManager
-        self.builder = builder
     }
 }
