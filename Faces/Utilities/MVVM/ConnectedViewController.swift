@@ -17,6 +17,6 @@ protocol ConnectedViewController {
 
     init(viewModel: AnyViewModel)
 
-    /// Bind the view controller and it's view model
+    /// Bind the view controller and its view model
     func bindViewModel()
 }
