@@ -16,7 +16,6 @@ final class HomeViewModel: ConnectedViewModel, RoutedViewModel {
         .init(title: "Async", iconName: "timelapse", tag: .async),
         .init(title: "Keyframe", iconName: "play.circle", tag: .keyframe),
         .init(title: "Core Animation", iconName: "play.circle.fill", tag: .coreAnimation),
-//        .init(title: "Theme", iconName: "paintpalette.fill", tag: .theme),
         .init(title: "Custom sheet", iconName: "arrow.up.doc", tag: .customSheet),
         .init(title: "Connectivity", iconName: "wifi.circle", tag: .connectivity)
     ]
@@ -55,8 +54,6 @@ final class HomeViewModel: ConnectedViewModel, RoutedViewModel {
             router.goToKeyframe()
         case .coreAnimation:
             router.goTocoreAnimation()
-        case .theme:
-            router.goTotheme()
         case .customSheet:
             router.goToCustomSheet()
         case .connectivity:

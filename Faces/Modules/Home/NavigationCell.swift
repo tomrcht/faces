@@ -65,7 +65,7 @@ final class NavigationCell: UITableViewCell {
     func update(with data: NavigationCell.Data) {
         titleLabel.text = data.title
         iconView.image = UIImage(systemName: data.iconName)
-        iconView.tintColor = .systemBlue
+        iconView.tintColor = .systemPurple
     }
 }
 
@@ -81,7 +81,6 @@ extension NavigationCell {
         case `async`
         case keyframe
         case coreAnimation
-        case theme
         case customSheet
         case connectivity
     }

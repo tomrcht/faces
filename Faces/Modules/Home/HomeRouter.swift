@@ -37,10 +37,6 @@ final class HomeRouter: Router {
         context?.pushViewController(builder.coreAnimationController, animated: true)
     }
 
-    func goTotheme() {
-        context?.pushViewController(builder.themeController, animated: true)
-    }
-
     func goToCustomSheet() {
         context?.pushViewController(builder.customSheetController, animated: true)
     }

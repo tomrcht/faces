@@ -15,7 +15,6 @@ protocol HomeBuilder {
     var asyncViewController: UIViewController { get }
     var keyframeController: UIViewController { get }
     var coreAnimationController: UIViewController { get }
-    var themeController: UIViewController { get }
     var customSheetController: UIViewController { get }
     var connectivityViewController: UIViewController { get }
 }
@@ -34,7 +33,6 @@ final class HomeComponent: Component<EmptyDependency>, HomeBuilder {
     var asyncViewController: UIViewController { asyncBuilder.asyncViewController }
     var keyframeController: UIViewController { keyframeBuilder.keyframeController }
     var coreAnimationController: UIViewController { coreAnimationBuilder.coreAnimationController }
-    var themeController: UIViewController { themeBuilder.themeViewController }
     var customSheetController: UIViewController { customSheetBuilder.customSheetViewController }
     var connectivityViewController: UIViewController { connectivityBuilder.connectivityViewController }
 
@@ -43,7 +41,6 @@ final class HomeComponent: Component<EmptyDependency>, HomeBuilder {
     private var asyncBuilder: AsyncBuilder { AsyncComponent(parent: self) }
     private var keyframeBuilder: KeyframeBuilder { KeyframeComponent(parent: self) }
     private var coreAnimationBuilder: CoreAnimationBuilder { CoreAnimationComponent(parent: self) }
-    private var themeBuilder: ThemeBuilder { ThemeComponent(parent: self) }
     private var customSheetBuilder: CustomSheetBuilder { CustomSheetComponent(parent: self) }
     private var connectivityBuilder: ConnectivityBuilder { ConnectivityComponent(parent: self) }
 }
