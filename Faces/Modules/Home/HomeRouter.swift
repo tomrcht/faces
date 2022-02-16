@@ -44,4 +44,8 @@ final class HomeRouter: Router {
     func goToconnectivity() {
         context?.pushViewController(builder.connectivityViewController, animated: true)
     }
+
+    func goToAlertWindow() {
+        context?.pushViewController(builder.alertWindowController, animated: true)
+    }
 }

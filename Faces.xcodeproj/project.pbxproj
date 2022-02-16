@@ -19,6 +19,9 @@
 		9265B847277332DF00276091 /* CustomSheetComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9265B846277332DF00276091 /* CustomSheetComponent.swift */; };
 		9265B8492773330A00276091 /* CustomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9265B8482773330A00276091 /* CustomSheetViewController.swift */; };
 		9277315C2756398D0060793A /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9277315B2756398D0060793A /* UIApplication+Extension.swift */; };
+		92A6743A27BD521E0074EACD /* AlertWindowComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A6743927BD521E0074EACD /* AlertWindowComponent.swift */; };
+		92A6743C27BD525A0074EACD /* AlertWindowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A6743B27BD525A0074EACD /* AlertWindowViewController.swift */; };
+		92A6743E27BD5B1A0074EACD /* AlertWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A6743D27BD5B1A0074EACD /* AlertWindow.swift */; };
 		92BED92327567FEA001FEA08 /* GestureRecognizer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BED92227567FEA001FEA08 /* GestureRecognizer+Extension.swift */; };
 		E21E04752766662800820E9F /* CoreAnimationComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21E04742766662800820E9F /* CoreAnimationComponent.swift */; };
 		E21E04772766666000820E9F /* CoreAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21E04762766666000820E9F /* CoreAnimationViewController.swift */; };
@@ -87,6 +90,9 @@
 		9265B846277332DF00276091 /* CustomSheetComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSheetComponent.swift; sourceTree = "<group>"; };
 		9265B8482773330A00276091 /* CustomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSheetViewController.swift; sourceTree = "<group>"; };
 		9277315B2756398D0060793A /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
+		92A6743927BD521E0074EACD /* AlertWindowComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertWindowComponent.swift; sourceTree = "<group>"; };
+		92A6743B27BD525A0074EACD /* AlertWindowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertWindowViewController.swift; sourceTree = "<group>"; };
+		92A6743D27BD5B1A0074EACD /* AlertWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertWindow.swift; sourceTree = "<group>"; };
 		92BED92227567FEA001FEA08 /* GestureRecognizer+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GestureRecognizer+Extension.swift"; sourceTree = "<group>"; };
 		E21E04742766662800820E9F /* CoreAnimationComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreAnimationComponent.swift; sourceTree = "<group>"; };
 		E21E04762766666000820E9F /* CoreAnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreAnimationViewController.swift; sourceTree = "<group>"; };
@@ -200,6 +206,15 @@
 			path = CustomSheet;
 			sourceTree = "<group>";
 		};
+		92A6743827BD520C0074EACD /* AlertWindow */ = {
+			isa = PBXGroup;
+			children = (
+				92A6743927BD521E0074EACD /* AlertWindowComponent.swift */,
+				92A6743B27BD525A0074EACD /* AlertWindowViewController.swift */,
+			);
+			path = AlertWindow;
+			sourceTree = "<group>";
+		};
 		E21E04732766660800820E9F /* CoreAnimation */ = {
 			isa = PBXGroup;
 			children = (
@@ -239,13 +254,14 @@
 			path = Connectivity;
 			sourceTree = "<group>";
 		};
-		E25A1E2C2732894F008B6001 /* Views */ = {
+		E25A1E2C2732894F008B6001 /* Components */ = {
 			isa = PBXGroup;
 			children = (
 				923B2F16278331D60077162C /* ActionSheet */,
 				E22243072755274200EF74FF /* ZoomableImageView.swift */,
+				92A6743D27BD5B1A0074EACD /* AlertWindow.swift */,
 			);
-			path = Views;
+			path = Components;
 			sourceTree = "<group>";
 		};
 		E25BE3CF272DB897007EA317 = {
@@ -274,7 +290,7 @@
 				E25BE40C272DB8BA007EA317 /* App */,
 				E281DC22272EDC6B00A02890 /* Generated */,
 				E281DC16272EAC6B00A02890 /* Utilities */,
-				E25A1E2C2732894F008B6001 /* Views */,
+				E25A1E2C2732894F008B6001 /* Components */,
 				9217E4C8275E0CEF00D91875 /* Services */,
 				9217E4CB275E0EE500D91875 /* Models */,
 				E25BE40B272DB8B3007EA317 /* Modules */,
@@ -312,6 +328,7 @@
 				92622E6B2760EBA90033126D /* KeyframeAnimation */,
 				E21E04732766660800820E9F /* CoreAnimation */,
 				E237A0512777B9DA005E5633 /* Connectivity */,
+				92A6743827BD520C0074EACD /* AlertWindow */,
 				9265B845277332BE00276091 /* CustomSheet */,
 			);
 			path = Modules;
@@ -542,12 +559,14 @@
 				E281DC15272EABF800A02890 /* HomeViewController.swift in Sources */,
 				E22242FD2755172600EF74FF /* ZoomViewController.swift in Sources */,
 				E21E04752766662800820E9F /* CoreAnimationComponent.swift in Sources */,
+				92A6743E27BD5B1A0074EACD /* AlertWindow.swift in Sources */,
 				E2224304275520F400EF74FF /* AsyncViewModel.swift in Sources */,
 				E22242F627550CC400EF74FF /* ConnectedViewController.swift in Sources */,
 				E25BE3DC272DB898007EA317 /* AppDelegate.swift in Sources */,
 				9217E4CF275E545D00D91875 /* UIEdgeInsets+Extension.swift in Sources */,
 				E22242FB275516B000EF74FF /* ZoomComponent.swift in Sources */,
 				923B2EF3277F72150077162C /* UIView+Extension.swift in Sources */,
+				92A6743A27BD521E0074EACD /* AlertWindowComponent.swift in Sources */,
 				9265B8492773330A00276091 /* CustomSheetViewController.swift in Sources */,
 				E26EA3172777BDEA006A7AB2 /* ConnectivityService.swift in Sources */,
 				92622E6D2760EBD80033126D /* KeyframeViewController.swift in Sources */,
@@ -565,6 +584,7 @@
 				9277315C2756398D0060793A /* UIApplication+Extension.swift in Sources */,
 				E22242F827550CE400EF74FF /* ConnectedViewModel.swift in Sources */,
 				E29C4CF827B15D5D001E642C /* Router.swift in Sources */,
+				92A6743C27BD525A0074EACD /* AlertWindowViewController.swift in Sources */,
 				E237A0532777B9EE005E5633 /* ConnectivityComponent.swift in Sources */,
 				923B2F1C278332300077162C /* SheetAction.swift in Sources */,
 				9217E4CD275E0EF100D91875 /* KanyeQuote.swift in Sources */,

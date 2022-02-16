@@ -31,6 +31,9 @@ public func registerProviderFactories() {
     __DependencyProviderRegistry.instance.registerDependencyProviderFactory(for: "^->RootComponent->HomeComponent->ZoomComponent") { component in
         return EmptyDependencyProvider(component: component)
     }
+    __DependencyProviderRegistry.instance.registerDependencyProviderFactory(for: "^->RootComponent->HomeComponent->AlertWindowComponent") { component in
+        return EmptyDependencyProvider(component: component)
+    }
     __DependencyProviderRegistry.instance.registerDependencyProviderFactory(for: "^->RootComponent->HomeComponent->CoreAnimationComponent") { component in
         return EmptyDependencyProvider(component: component)
     }

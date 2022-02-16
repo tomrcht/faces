@@ -17,7 +17,8 @@ final class HomeViewModel: ConnectedViewModel, RoutedViewModel {
         .init(title: "Keyframe", iconName: "play.circle", tag: .keyframe),
         .init(title: "Core Animation", iconName: "play.circle.fill", tag: .coreAnimation),
         .init(title: "Custom sheet", iconName: "arrow.up.doc", tag: .customSheet),
-        .init(title: "Connectivity", iconName: "wifi.circle", tag: .connectivity)
+        .init(title: "Connectivity", iconName: "wifi.circle", tag: .connectivity),
+        .init(title: "Alert window", iconName: "macwindow", tag: .alertWindow)
     ]
 
     let router: HomeRouter
@@ -58,6 +59,8 @@ final class HomeViewModel: ConnectedViewModel, RoutedViewModel {
             router.goToCustomSheet()
         case .connectivity:
             router.goToconnectivity()
+        case .alertWindow:
+            router.goToAlertWindow()
         }
     }
 }

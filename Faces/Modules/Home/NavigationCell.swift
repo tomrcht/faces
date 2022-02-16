@@ -83,5 +83,6 @@ extension NavigationCell {
         case coreAnimation
         case customSheet
         case connectivity
+        case alertWindow
     }
 }
