@@ -25,12 +25,6 @@ final class RootComponent: BootstrapComponent {
         }
     }
 
-    var themeManager: ThemeManager {
-        shared {
-            ThemeManager()
-        }
-    }
-
     var connectivityService: ConnectivityService {
         shared {
             ConnectivityService()

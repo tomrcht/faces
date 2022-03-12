@@ -37,6 +37,11 @@
 		E237A0532777B9EE005E5633 /* ConnectivityComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E237A0522777B9EE005E5633 /* ConnectivityComponent.swift */; };
 		E237A0552777BA23005E5633 /* ConnectivityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E237A0542777BA23005E5633 /* ConnectivityViewModel.swift */; };
 		E237A0572777BA8A005E5633 /* ConnectivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E237A0562777BA8A005E5633 /* ConnectivityViewController.swift */; };
+		E2594D5227CBEA1B00A7A5AE /* ToastComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2594D5127CBEA1B00A7A5AE /* ToastComponent.swift */; };
+		E2594D5427CBEB5B00A7A5AE /* ToastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2594D5327CBEB5B00A7A5AE /* ToastViewController.swift */; };
+		E2594D5627CBEBAB00A7A5AE /* ToastViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2594D5527CBEBAB00A7A5AE /* ToastViewModel.swift */; };
+		E2594D5927CBF1B800A7A5AE /* ToastManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2594D5827CBF1B800A7A5AE /* ToastManager.swift */; };
+		E2594D5B27CBF1EB00A7A5AE /* ToastWindow+ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2594D5A27CBF1EB00A7A5AE /* ToastWindow+ViewController.swift */; };
 		E25A1E2F2732896D008B6001 /* NavigationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25A1E2E2732896D008B6001 /* NavigationCell.swift */; };
 		E25BE3DC272DB898007EA317 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25BE3DB272DB898007EA317 /* AppDelegate.swift */; };
 		E25BE3DE272DB898007EA317 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25BE3DD272DB898007EA317 /* SceneDelegate.swift */; };
@@ -47,7 +52,6 @@
 		E25BE3FF272DB899007EA317 /* FacesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25BE3FE272DB899007EA317 /* FacesUITestsLaunchTests.swift */; };
 		E25BE40F272DDACD007EA317 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25BE40E272DDACD007EA317 /* RootViewController.swift */; };
 		E26EA3172777BDEA006A7AB2 /* ConnectivityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26EA3162777BDEA006A7AB2 /* ConnectivityService.swift */; };
-		E278804027694C56007D035D /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E278803F27694C56007D035D /* ThemeManager.swift */; };
 		E281DC0D272EAA0A00A02890 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = E281DC0C272EAA0A00A02890 /* SnapKit */; };
 		E281DC10272EAA1F00A02890 /* NeedleFoundation in Frameworks */ = {isa = PBXBuildFile; productRef = E281DC0F272EAA1F00A02890 /* NeedleFoundation */; };
 		E281DC12272EAA3800A02890 /* RootComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E281DC11272EAA3800A02890 /* RootComponent.swift */; };
@@ -108,6 +112,11 @@
 		E237A0522777B9EE005E5633 /* ConnectivityComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectivityComponent.swift; sourceTree = "<group>"; };
 		E237A0542777BA23005E5633 /* ConnectivityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectivityViewModel.swift; sourceTree = "<group>"; };
 		E237A0562777BA8A005E5633 /* ConnectivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectivityViewController.swift; sourceTree = "<group>"; };
+		E2594D5127CBEA1B00A7A5AE /* ToastComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastComponent.swift; sourceTree = "<group>"; };
+		E2594D5327CBEB5B00A7A5AE /* ToastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastViewController.swift; sourceTree = "<group>"; };
+		E2594D5527CBEBAB00A7A5AE /* ToastViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastViewModel.swift; sourceTree = "<group>"; };
+		E2594D5827CBF1B800A7A5AE /* ToastManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastManager.swift; sourceTree = "<group>"; };
+		E2594D5A27CBF1EB00A7A5AE /* ToastWindow+ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ToastWindow+ViewController.swift"; sourceTree = "<group>"; };
 		E25A1E2E2732896D008B6001 /* NavigationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationCell.swift; sourceTree = "<group>"; };
 		E25BE3D8272DB898007EA317 /* Faces.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Faces.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E25BE3DB272DB898007EA317 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -122,7 +131,6 @@
 		E25BE3FE272DB899007EA317 /* FacesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacesUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		E25BE40E272DDACD007EA317 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		E26EA3162777BDEA006A7AB2 /* ConnectivityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectivityService.swift; sourceTree = "<group>"; };
-		E278803F27694C56007D035D /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
 		E281DC11272EAA3800A02890 /* RootComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootComponent.swift; sourceTree = "<group>"; };
 		E281DC14272EABF800A02890 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		E281DC19272EB87800A02890 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -164,7 +172,6 @@
 			isa = PBXGroup;
 			children = (
 				9217E4C9275E0D0800D91875 /* KanyeService.swift */,
-				E278803F27694C56007D035D /* ThemeManager.swift */,
 				E26EA3162777BDEA006A7AB2 /* ConnectivityService.swift */,
 			);
 			path = Services;
@@ -254,6 +261,25 @@
 			path = Connectivity;
 			sourceTree = "<group>";
 		};
+		E2594D5027CBEA0B00A7A5AE /* Toasts */ = {
+			isa = PBXGroup;
+			children = (
+				E2594D5127CBEA1B00A7A5AE /* ToastComponent.swift */,
+				E2594D5327CBEB5B00A7A5AE /* ToastViewController.swift */,
+				E2594D5527CBEBAB00A7A5AE /* ToastViewModel.swift */,
+			);
+			path = Toasts;
+			sourceTree = "<group>";
+		};
+		E2594D5727CBF19B00A7A5AE /* Toasts */ = {
+			isa = PBXGroup;
+			children = (
+				E2594D5827CBF1B800A7A5AE /* ToastManager.swift */,
+				E2594D5A27CBF1EB00A7A5AE /* ToastWindow+ViewController.swift */,
+			);
+			path = Toasts;
+			sourceTree = "<group>";
+		};
 		E25A1E2C2732894F008B6001 /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -329,6 +355,7 @@
 				E21E04732766660800820E9F /* CoreAnimation */,
 				E237A0512777B9DA005E5633 /* Connectivity */,
 				92A6743827BD520C0074EACD /* AlertWindow */,
+				E2594D5027CBEA0B00A7A5AE /* Toasts */,
 				9265B845277332BE00276091 /* CustomSheet */,
 			);
 			path = Modules;
@@ -367,6 +394,7 @@
 		E281DC16272EAC6B00A02890 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				E2594D5727CBF19B00A7A5AE /* Toasts */,
 				E281DC1D272ED8CC00A02890 /* MVVM */,
 				E281DC1B272EB93C00A02890 /* NotImplemented.swift */,
 				9277315B2756398D0060793A /* UIApplication+Extension.swift */,
@@ -567,6 +595,7 @@
 				E22242FB275516B000EF74FF /* ZoomComponent.swift in Sources */,
 				923B2EF3277F72150077162C /* UIView+Extension.swift in Sources */,
 				92A6743A27BD521E0074EACD /* AlertWindowComponent.swift in Sources */,
+				E2594D5627CBEBAB00A7A5AE /* ToastViewModel.swift in Sources */,
 				9265B8492773330A00276091 /* CustomSheetViewController.swift in Sources */,
 				E26EA3172777BDEA006A7AB2 /* ConnectivityService.swift in Sources */,
 				92622E6D2760EBD80033126D /* KeyframeViewController.swift in Sources */,
@@ -595,10 +624,13 @@
 				E237A0552777BA23005E5633 /* ConnectivityViewModel.swift in Sources */,
 				E22243062755214200EF74FF /* AsyncViewController.swift in Sources */,
 				92622E6F2760EBEC0033126D /* KeyframeComponent.swift in Sources */,
+				E2594D5427CBEB5B00A7A5AE /* ToastViewController.swift in Sources */,
 				E25A1E2F2732896D008B6001 /* NavigationCell.swift in Sources */,
+				E2594D5227CBEA1B00A7A5AE /* ToastComponent.swift in Sources */,
+				E2594D5927CBF1B800A7A5AE /* ToastManager.swift in Sources */,
 				E2224302275520AA00EF74FF /* AsyncComponent.swift in Sources */,
 				E22242FF2755172D00EF74FF /* ZoomViewModel.swift in Sources */,
-				E278804027694C56007D035D /* ThemeManager.swift in Sources */,
+				E2594D5B27CBF1EB00A7A5AE /* ToastWindow+ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

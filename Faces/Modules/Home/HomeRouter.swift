@@ -48,4 +48,8 @@ final class HomeRouter: Router {
     func goToAlertWindow() {
         context?.pushViewController(builder.alertWindowController, animated: true)
     }
+
+    func goToToast() {
+        context?.pushViewController(builder.toastViewController, animated: true)
+    }
 }
