@@ -11,8 +11,8 @@ import Combine
 
 /// Service that checks the current connectivity status
 final class ConnectivityService {
-    let isMonitoring = CurrentValueSubject<Bool, Never>(false)
-    let connectivityStatus = CurrentValueSubject<Status, Never>(.unknown)
+    let isMonitoring = PassthroughSubject<Bool, Never>()
+    let connectivityStatus = PassthroughSubject<Status, Never>()
 
     private var monitor: NWPathMonitor?
     private let monitorQueue = DispatchQueue(label: "com.faces.network-monitor", qos: .utility)

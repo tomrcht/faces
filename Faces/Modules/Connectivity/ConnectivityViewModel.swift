@@ -9,21 +9,34 @@ import Foundation
 import Combine
 
 final class ConnectivityViewModel: ConnectedViewModel {
-    let isMonitoring: CurrentValueSubject<Bool, Never>
+    let isMonitoring = CurrentValueSubject<Bool, Never>(false)
+    let connectionStatus = PassthroughSubject<ConnectivityService.Status, Never>()
     var bag = Set<AnyCancellable>()
 
     private let connectivityService: ConnectivityService
 
     init(connectivityService: ConnectivityService) {
         self.connectivityService = connectivityService
-        self.isMonitoring = self.connectivityService.isMonitoring
+        bindService()
     }
 
-    func startMonitoring() {
-        connectivityService.startMonitoring()
+    private func bindService() {
+        connectivityService.isMonitoring.sink { [weak self] isMonitoring in
+            self?.isMonitoring.send(isMonitoring)
+        }
+        .store(in: &bag)
+
+        connectivityService.connectivityStatus.sink { [weak self] status in
+            self?.connectionStatus.send(status)
+        }
+        .store(in: &bag)
     }
 
-    func stopMonitoring() {
-        connectivityService.stopMonitoring()
+    func toggleMonitoring() {
+        if isMonitoring.value {
+            connectivityService.stopMonitoring()
+        } else {
+            connectivityService.startMonitoring()
+        }
     }
 }
