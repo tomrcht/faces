@@ -84,5 +84,6 @@ extension NavigationCell {
         case customSheet
         case connectivity
         case alertWindow
+        case stacks
     }
 }

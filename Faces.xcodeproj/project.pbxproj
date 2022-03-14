@@ -19,6 +19,8 @@
 		9265B847277332DF00276091 /* CustomSheetComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9265B846277332DF00276091 /* CustomSheetComponent.swift */; };
 		9265B8492773330A00276091 /* CustomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9265B8482773330A00276091 /* CustomSheetViewController.swift */; };
 		9277315C2756398D0060793A /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9277315B2756398D0060793A /* UIApplication+Extension.swift */; };
+		92A2BD6527DF38AB008F84AB /* StacksComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A2BD6427DF38AB008F84AB /* StacksComponent.swift */; };
+		92A2BD6727DF3913008F84AB /* StacksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A2BD6627DF3913008F84AB /* StacksViewController.swift */; };
 		92A6743A27BD521E0074EACD /* AlertWindowComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A6743927BD521E0074EACD /* AlertWindowComponent.swift */; };
 		92A6743C27BD525A0074EACD /* AlertWindowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A6743B27BD525A0074EACD /* AlertWindowViewController.swift */; };
 		92A6743E27BD5B1A0074EACD /* AlertWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A6743D27BD5B1A0074EACD /* AlertWindow.swift */; };
@@ -90,6 +92,8 @@
 		9265B846277332DF00276091 /* CustomSheetComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSheetComponent.swift; sourceTree = "<group>"; };
 		9265B8482773330A00276091 /* CustomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSheetViewController.swift; sourceTree = "<group>"; };
 		9277315B2756398D0060793A /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
+		92A2BD6427DF38AB008F84AB /* StacksComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StacksComponent.swift; sourceTree = "<group>"; };
+		92A2BD6627DF3913008F84AB /* StacksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StacksViewController.swift; sourceTree = "<group>"; };
 		92A6743927BD521E0074EACD /* AlertWindowComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertWindowComponent.swift; sourceTree = "<group>"; };
 		92A6743B27BD525A0074EACD /* AlertWindowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertWindowViewController.swift; sourceTree = "<group>"; };
 		92A6743D27BD5B1A0074EACD /* AlertWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertWindow.swift; sourceTree = "<group>"; };
@@ -204,6 +208,15 @@
 				9265B8482773330A00276091 /* CustomSheetViewController.swift */,
 			);
 			path = CustomSheet;
+			sourceTree = "<group>";
+		};
+		92A2BD6327DF387A008F84AB /* Stacks */ = {
+			isa = PBXGroup;
+			children = (
+				92A2BD6427DF38AB008F84AB /* StacksComponent.swift */,
+				92A2BD6627DF3913008F84AB /* StacksViewController.swift */,
+			);
+			path = Stacks;
 			sourceTree = "<group>";
 		};
 		92A6743827BD520C0074EACD /* AlertWindow */ = {
@@ -329,6 +342,7 @@
 				E21E04732766660800820E9F /* CoreAnimation */,
 				E237A0512777B9DA005E5633 /* Connectivity */,
 				92A6743827BD520C0074EACD /* AlertWindow */,
+				92A2BD6327DF387A008F84AB /* Stacks */,
 				9265B845277332BE00276091 /* CustomSheet */,
 			);
 			path = Modules;
@@ -562,6 +576,7 @@
 				92A6743E27BD5B1A0074EACD /* AlertWindow.swift in Sources */,
 				E2224304275520F400EF74FF /* AsyncViewModel.swift in Sources */,
 				E22242F627550CC400EF74FF /* ConnectedViewController.swift in Sources */,
+				92A2BD6527DF38AB008F84AB /* StacksComponent.swift in Sources */,
 				E25BE3DC272DB898007EA317 /* AppDelegate.swift in Sources */,
 				9217E4CF275E545D00D91875 /* UIEdgeInsets+Extension.swift in Sources */,
 				E22242FB275516B000EF74FF /* ZoomComponent.swift in Sources */,
@@ -589,6 +604,7 @@
 				923B2F1C278332300077162C /* SheetAction.swift in Sources */,
 				9217E4CD275E0EF100D91875 /* KanyeQuote.swift in Sources */,
 				E21E04772766666000820E9F /* CoreAnimationViewController.swift in Sources */,
+				92A2BD6727DF3913008F84AB /* StacksViewController.swift in Sources */,
 				E25BE40F272DDACD007EA317 /* RootViewController.swift in Sources */,
 				9265B847277332DF00276091 /* CustomSheetComponent.swift in Sources */,
 				E281DC25272EDD3500A02890 /* NeedleGenerated.swift in Sources */,
