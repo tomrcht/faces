@@ -13,12 +13,13 @@ final class ConnectivityViewController: UIViewController, ConnectedViewControlle
     private let statusMonitoringButton: UIButton = {
         let button = UIButton()
         button.setTitleColor(.systemGreen, for: .normal)
-        button.addTarget(self, action: #selector(toggleMonitoring), for: .touchUpInside)
         return button
     }()
     private let statusInformationsStack: UIStackView = {
         let stack = UIStackView()
         stack.axis = .vertical
+        stack.alignment = .fill
+        stack.distribution = .fillEqually
         stack.spacing = 8
         return stack
     }()
@@ -63,20 +64,20 @@ final class ConnectivityViewController: UIViewController, ConnectedViewControlle
         view.backgroundColor = .white
 
         // toggle button
+        statusMonitoringButton.addTarget(self, action: #selector(toggleMonitoring), for: .touchUpInside)
         view.addSubview(statusMonitoringButton)
         statusMonitoringButton.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).inset(16)
+            make.height.equalTo(24)
         }
 
         // informations stack view
         view.addSubview(statusInformationsStack)
 
-        statusInformationsStack.backgroundColor = .systemBlue.withAlphaComponent(0.4)
         statusInformationsStack.addArrangedSubview(connectionUpDownStatus)
         statusInformationsStack.addArrangedSubview(connectionConstrainedStatus)
         statusInformationsStack.addArrangedSubview(connectionExpensiveStatus)
-
         statusInformationsStack.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide.snp.top).inset(8)
             make.leading.trailing.equalToSuperview().inset(8)
