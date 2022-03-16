@@ -103,20 +103,8 @@ final class StoriesViewController: UIViewController, ConnectedViewController {
     // MARK: - actions
     @objc
     private func addViewToStackView() {
-        // S-tier naming right there
-        let squareSize: CGFloat = 64
-        let circle = UIView()
-        circle.backgroundColor = viewModel.getRandomColor()
-        circle.clipsToBounds = true
-        circle.layer.cornerRadius = squareSize / 2
-        circle.translatesAutoresizingMaskIntoConstraints = false
-
-        NSLayoutConstraint.activate([
-            circle.widthAnchor.constraint(equalToConstant: squareSize),
-            circle.heightAnchor.constraint(equalToConstant: squareSize),
-        ])
-
-        stackView.addArrangedSubview(circle)
+        let circleView = viewModel.makeCircleView(ofSize: 64)
+        stackView.addArrangedSubview(circleView)
     }
 
     @objc

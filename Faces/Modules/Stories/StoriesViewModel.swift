@@ -23,7 +23,7 @@ final class StoriesViewModel: ConnectedViewModel {
         .systemBrown,
     ]
 
-    func getRandomColor() -> UIColor {
-        colors.randomElement()!
+    func makeCircleView(ofSize diameter: CGFloat) -> UIView {
+        InstaCircleView(diameter: diameter, color: colors.randomElement()!)
     }
 }

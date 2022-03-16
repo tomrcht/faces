@@ -14,6 +14,7 @@
 		923B2F18278331E50077162C /* ActionSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923B2F17278331E50077162C /* ActionSheetViewController.swift */; };
 		923B2F1A2783320F0077162C /* ActionSheet+Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923B2F192783320F0077162C /* ActionSheet+Configuration.swift */; };
 		923B2F1C278332300077162C /* SheetAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923B2F1B278332300077162C /* SheetAction.swift */; };
+		923D5E7127E218B800087E84 /* InstaCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923D5E7027E218B800087E84 /* InstaCircleView.swift */; };
 		925309F727DF5765000164B2 /* StoriesComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925309F627DF5765000164B2 /* StoriesComponent.swift */; };
 		925309F927DF578F000164B2 /* StoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925309F827DF578F000164B2 /* StoriesViewController.swift */; };
 		925309FB27DF57A5000164B2 /* StoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925309FA27DF57A5000164B2 /* StoriesViewModel.swift */; };
@@ -88,6 +89,7 @@
 		923B2F17278331E50077162C /* ActionSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionSheetViewController.swift; sourceTree = "<group>"; };
 		923B2F192783320F0077162C /* ActionSheet+Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ActionSheet+Configuration.swift"; sourceTree = "<group>"; };
 		923B2F1B278332300077162C /* SheetAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetAction.swift; sourceTree = "<group>"; };
+		923D5E7027E218B800087E84 /* InstaCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstaCircleView.swift; sourceTree = "<group>"; };
 		925309F627DF5765000164B2 /* StoriesComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesComponent.swift; sourceTree = "<group>"; };
 		925309F827DF578F000164B2 /* StoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesViewController.swift; sourceTree = "<group>"; };
 		925309FA27DF57A5000164B2 /* StoriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesViewModel.swift; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 				925309F627DF5765000164B2 /* StoriesComponent.swift */,
 				925309F827DF578F000164B2 /* StoriesViewController.swift */,
 				925309FA27DF57A5000164B2 /* StoriesViewModel.swift */,
+				923D5E7027E218B800087E84 /* InstaCircleView.swift */,
 			);
 			path = Stories;
 			sourceTree = "<group>";
@@ -600,6 +603,7 @@
 				E281DC12272EAA3800A02890 /* RootComponent.swift in Sources */,
 				E25BE3DE272DB898007EA317 /* SceneDelegate.swift in Sources */,
 				E237A0572777BA8A005E5633 /* ConnectivityViewController.swift in Sources */,
+				923D5E7127E218B800087E84 /* InstaCircleView.swift in Sources */,
 				9277315C2756398D0060793A /* UIApplication+Extension.swift in Sources */,
 				E22242F827550CE400EF74FF /* ConnectedViewModel.swift in Sources */,
 				E29C4CF827B15D5D001E642C /* Router.swift in Sources */,
