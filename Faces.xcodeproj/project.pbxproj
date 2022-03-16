@@ -14,6 +14,9 @@
 		923B2F18278331E50077162C /* ActionSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923B2F17278331E50077162C /* ActionSheetViewController.swift */; };
 		923B2F1A2783320F0077162C /* ActionSheet+Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923B2F192783320F0077162C /* ActionSheet+Configuration.swift */; };
 		923B2F1C278332300077162C /* SheetAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923B2F1B278332300077162C /* SheetAction.swift */; };
+		925309F727DF5765000164B2 /* StoriesComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925309F627DF5765000164B2 /* StoriesComponent.swift */; };
+		925309F927DF578F000164B2 /* StoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925309F827DF578F000164B2 /* StoriesViewController.swift */; };
+		925309FB27DF57A5000164B2 /* StoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925309FA27DF57A5000164B2 /* StoriesViewModel.swift */; };
 		92622E6D2760EBD80033126D /* KeyframeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92622E6C2760EBD80033126D /* KeyframeViewController.swift */; };
 		92622E6F2760EBEC0033126D /* KeyframeComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92622E6E2760EBEC0033126D /* KeyframeComponent.swift */; };
 		9265B847277332DF00276091 /* CustomSheetComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9265B846277332DF00276091 /* CustomSheetComponent.swift */; };
@@ -85,6 +88,9 @@
 		923B2F17278331E50077162C /* ActionSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionSheetViewController.swift; sourceTree = "<group>"; };
 		923B2F192783320F0077162C /* ActionSheet+Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ActionSheet+Configuration.swift"; sourceTree = "<group>"; };
 		923B2F1B278332300077162C /* SheetAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetAction.swift; sourceTree = "<group>"; };
+		925309F627DF5765000164B2 /* StoriesComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesComponent.swift; sourceTree = "<group>"; };
+		925309F827DF578F000164B2 /* StoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesViewController.swift; sourceTree = "<group>"; };
+		925309FA27DF57A5000164B2 /* StoriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesViewModel.swift; sourceTree = "<group>"; };
 		92622E6C2760EBD80033126D /* KeyframeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyframeViewController.swift; sourceTree = "<group>"; };
 		92622E6E2760EBEC0033126D /* KeyframeComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyframeComponent.swift; sourceTree = "<group>"; };
 		9265B846277332DF00276091 /* CustomSheetComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSheetComponent.swift; sourceTree = "<group>"; };
@@ -186,6 +192,16 @@
 				923B2F1B278332300077162C /* SheetAction.swift */,
 			);
 			path = ActionSheet;
+			sourceTree = "<group>";
+		};
+		925309F527DF5755000164B2 /* Stories */ = {
+			isa = PBXGroup;
+			children = (
+				925309F627DF5765000164B2 /* StoriesComponent.swift */,
+				925309F827DF578F000164B2 /* StoriesViewController.swift */,
+				925309FA27DF57A5000164B2 /* StoriesViewModel.swift */,
+			);
+			path = Stories;
 			sourceTree = "<group>";
 		};
 		92622E6B2760EBA90033126D /* KeyframeAnimation */ = {
@@ -321,6 +337,7 @@
 		E25BE40B272DB8B3007EA317 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				925309F527DF5755000164B2 /* Stories */,
 				E25BE40D272DDAB5007EA317 /* Root */,
 				E281DC13272EABDE00A02890 /* Home */,
 				E22242F92755169400EF74FF /* Zoom */,
@@ -555,6 +572,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				925309F927DF578F000164B2 /* StoriesViewController.swift in Sources */,
 				923B2F1A2783320F0077162C /* ActionSheet+Configuration.swift in Sources */,
 				E281DC15272EABF800A02890 /* HomeViewController.swift in Sources */,
 				E22242FD2755172600EF74FF /* ZoomViewController.swift in Sources */,
@@ -575,6 +593,7 @@
 				923B2F18278331E50077162C /* ActionSheetViewController.swift in Sources */,
 				E22243082755274200EF74FF /* ZoomableImageView.swift in Sources */,
 				E281DC21272ED9C100A02890 /* HomeComponent.swift in Sources */,
+				925309F727DF5765000164B2 /* StoriesComponent.swift in Sources */,
 				E29C4CFA27B16C1B001E642C /* HomeRouter.swift in Sources */,
 				92BED92327567FEA001FEA08 /* GestureRecognizer+Extension.swift in Sources */,
 				9217E4CA275E0D0800D91875 /* KanyeService.swift in Sources */,
@@ -596,6 +615,7 @@
 				E22243062755214200EF74FF /* AsyncViewController.swift in Sources */,
 				92622E6F2760EBEC0033126D /* KeyframeComponent.swift in Sources */,
 				E25A1E2F2732896D008B6001 /* NavigationCell.swift in Sources */,
+				925309FB27DF57A5000164B2 /* StoriesViewModel.swift in Sources */,
 				E2224302275520AA00EF74FF /* AsyncComponent.swift in Sources */,
 				E22242FF2755172D00EF74FF /* ZoomViewModel.swift in Sources */,
 				E278804027694C56007D035D /* ThemeManager.swift in Sources */,
