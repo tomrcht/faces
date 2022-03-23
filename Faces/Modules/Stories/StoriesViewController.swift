@@ -26,6 +26,15 @@ final class StoriesViewController: UIViewController, ConnectedViewController {
         stack.translatesAutoresizingMaskIntoConstraints = false
         return stack
     }()
+    private lazy var overflowLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Content overflows its scrollview"
+        label.textColor = .black
+        label.font = UIFont(name: "Avenir", size: 12)
+        label.isHidden = true
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
     private lazy var addButton: UIButton = {
         let button = UIButton()
         button.setTitle("Add", for: .normal)
@@ -81,6 +90,12 @@ final class StoriesViewController: UIViewController, ConnectedViewController {
             stackView.heightAnchor.constraint(equalTo: scrollView.heightAnchor),
         ])
 
+        view.addSubview(overflowLabel)
+        NSLayoutConstraint.activate([
+            overflowLabel.topAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: 16),
+            overflowLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+        ])
+
         view.addSubview(addButton)
         NSLayoutConstraint.activate([
             addButton.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: -32),
@@ -101,8 +116,13 @@ final class StoriesViewController: UIViewController, ConnectedViewController {
             .receive(on: DispatchQueue.main)
             .sink { [unowned self] circleView in
                 self.stackView.addArrangedSubview(circleView)
+                self.udpateOverflowLabelVisibility()
             }
             .store(in: &bag)
+    }
+
+    private func udpateOverflowLabelVisibility() {
+        overflowLabel.isHidden = !(scrollView.contentSize.width > scrollView.bounds.width - 64)
     }
 
     // MARK: - actions
@@ -119,5 +139,6 @@ final class StoriesViewController: UIViewController, ConnectedViewController {
         }
         stackView.removeArrangedSubview(lastView)
         lastView.removeFromSuperview()
+        udpateOverflowLabelVisibility()
     }
 }
