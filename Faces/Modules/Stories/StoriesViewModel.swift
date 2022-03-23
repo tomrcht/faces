@@ -10,6 +10,7 @@ import Combine
 import UIKit
 
 final class StoriesViewModel: ConnectedViewModel {
+    let circles = PassthroughSubject<InstaCircleView, Never>()
     var bag = Set<AnyCancellable>()
 
     private let colors: [UIColor] = [
@@ -23,7 +24,8 @@ final class StoriesViewModel: ConnectedViewModel {
         .systemBrown,
     ]
 
-    func makeCircleView(ofSize diameter: CGFloat) -> UIView {
-        InstaCircleView(diameter: diameter, color: colors.randomElement()!)
+    func getNewCircleView(ofSize diameter: CGFloat) {
+        let newCircle = InstaCircleView(diameter: diameter, color: colors.randomElement()!)
+        circles.send(newCircle)
     }
 }

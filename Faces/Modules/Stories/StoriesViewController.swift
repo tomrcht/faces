@@ -97,14 +97,19 @@ final class StoriesViewController: UIViewController, ConnectedViewController {
     }
 
     func bindViewModel() {
-        //
+        viewModel.circles
+            .receive(on: DispatchQueue.main)
+            .sink { [unowned self] circleView in
+                self.stackView.addArrangedSubview(circleView)
+            }
+            .store(in: &bag)
     }
 
     // MARK: - actions
     @objc
     private func addViewToStackView() {
-        let circleView = viewModel.makeCircleView(ofSize: 64)
-        stackView.addArrangedSubview(circleView)
+        // Useless, should be done in the view controller, but hey ¯\_(ツ)_/¯
+        viewModel.getNewCircleView(ofSize: 64)
     }
 
     @objc
